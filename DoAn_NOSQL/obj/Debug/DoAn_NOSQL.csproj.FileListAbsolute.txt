@@ -22,10 +22,11 @@ C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\bin\Debug\System.Runtime.CompilerServices
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\bin\Debug\System.ValueTuple.xml
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.csproj.AssemblyReference.cache
-C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.Form1.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.Properties.Resources.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.csproj.GenerateResource.cache
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.csproj.CoreCompileInputs.cache
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.csproj.CopyComplete
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.exe
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.pdb
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.Form_DangNhap.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.Form_DsBanBe.resources

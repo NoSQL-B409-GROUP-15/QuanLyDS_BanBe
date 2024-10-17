@@ -8,12 +8,12 @@ namespace DoAn_NOSQL.Model
 {
     //FRIENDREQUEST: REQUEST_ID, FROM_USER_ID, TO_USER_ID, STATUS,SENT_AT
 
-    class FriendRequest
+    public class FriendRequest
     {
-        public string REQUEST_ID { get; set; }
-        public string FROM_USER_ID { get; set; }
-        public string TO_USER_ID { get; set; }
-        public string STATUS { get; set; }
-        public string SENT_AT { get; set; }
+        public int request_id { get; set; }
+        public int from_user_id { get; set; }
+        public int to_user_id { get; set; }
+        public string status { get; set; }
+        public string send_at { get; set; }
     }
 }

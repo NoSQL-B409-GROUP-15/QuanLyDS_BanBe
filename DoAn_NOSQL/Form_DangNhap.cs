@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using DoAn_NOSQL.Model;
 namespace DoAn_NOSQL
 {
-    public partial class Form1 : Form
+    public partial class Form_DangNhap : Form
     {
         ConnectNeo4j _cn;
-        public Form1()
+        public Form_DangNhap()
         {
             InitializeComponent();
       
@@ -33,7 +33,12 @@ namespace DoAn_NOSQL
             var us = await _cn.LoginAsync(username, password);
             if (us != null)
             {
-                MessageBox.Show("Chào mừng đến với phần mềm lỏ"+ us.USERNAME);
+                this.Hide();
+                Form_DsBanBe ff = new Form_DsBanBe();
+                
+                ff.userActivce = us;
+                ff.ShowDialog();
+                this.Close();
             }
             else
             {

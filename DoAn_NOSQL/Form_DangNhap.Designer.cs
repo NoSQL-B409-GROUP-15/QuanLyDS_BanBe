@@ -1,7 +1,7 @@
 ﻿
 namespace DoAn_NOSQL
 {
-    partial class Form1
+    partial class Form_DangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@ namespace DoAn_NOSQL
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(113, 38);
+            this.kryptonLabel1.Location = new System.Drawing.Point(129, 48);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.kryptonLabel1.Size = new System.Drawing.Size(324, 29);
@@ -50,21 +50,23 @@ namespace DoAn_NOSQL
             // 
             // txTenDangNhap
             // 
-            this.txTenDangNhap.Location = new System.Drawing.Point(219, 113);
+            this.txTenDangNhap.Location = new System.Drawing.Point(241, 107);
             this.txTenDangNhap.Name = "txTenDangNhap";
             this.txTenDangNhap.Size = new System.Drawing.Size(246, 31);
             this.txTenDangNhap.TabIndex = 1;
+            this.txTenDangNhap.Text = "user02";
             // 
             // txMatKhau
             // 
-            this.txMatKhau.Location = new System.Drawing.Point(219, 190);
+            this.txMatKhau.Location = new System.Drawing.Point(241, 184);
             this.txMatKhau.Name = "txMatKhau";
             this.txMatKhau.Size = new System.Drawing.Size(246, 31);
             this.txMatKhau.TabIndex = 2;
+            this.txMatKhau.Text = "123456789";
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(13, 113);
+            this.kryptonLabel2.Location = new System.Drawing.Point(35, 107);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(136, 29);
             this.kryptonLabel2.TabIndex = 3;
@@ -72,7 +74,7 @@ namespace DoAn_NOSQL
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(12, 190);
+            this.kryptonLabel3.Location = new System.Drawing.Point(34, 184);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(90, 29);
             this.kryptonLabel3.TabIndex = 4;
@@ -80,7 +82,7 @@ namespace DoAn_NOSQL
             // 
             // btnHuyBo
             // 
-            this.btnHuyBo.Location = new System.Drawing.Point(219, 264);
+            this.btnHuyBo.Location = new System.Drawing.Point(241, 258);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(126, 51);
             this.btnHuyBo.TabIndex = 5;
@@ -88,18 +90,18 @@ namespace DoAn_NOSQL
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(369, 264);
+            this.btnDangNhap.Location = new System.Drawing.Point(391, 258);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(126, 51);
             this.btnDangNhap.TabIndex = 6;
             this.btnDangNhap.Values.Text = "Đăng nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
-            // Form1
+            // Form_DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 359);
+            this.ClientSize = new System.Drawing.Size(554, 359);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.btnHuyBo);
             this.Controls.Add(this.kryptonLabel3);
@@ -107,7 +109,7 @@ namespace DoAn_NOSQL
             this.Controls.Add(this.txMatKhau);
             this.Controls.Add(this.txTenDangNhap);
             this.Controls.Add(this.kryptonLabel1);
-            this.Name = "Form1";
+            this.Name = "Form_DangNhap";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -8,10 +8,10 @@ namespace DoAn_NOSQL.Model
 {
     //POST: POST_ID,CONTENT, CREATED_AT
 
-    class Post
+    public class Post
     {
-        public string POST_ID { get; set; }
-        public string CONTENT { get; set; }
-        public string CREATED_AT { get; set; }
+        public int post_id { get; set; }
+        public string content { get; set; }
+        public string created_at { get; set; }
     }
 }

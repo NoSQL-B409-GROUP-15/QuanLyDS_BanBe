@@ -79,20 +79,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectNeo4j.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Form_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form_DangNhap.Designer.cs">
+      <DependentUpon>Form_DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_DsBanBe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DsBanBe.Designer.cs">
+      <DependentUpon>Form_DsBanBe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mapping.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\FriendRequest.cs" />
     <Compile Include="Model\Post.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Form_DangNhap.resx">
+      <DependentUpon>Form_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DsBanBe.resx">
+      <DependentUpon>Form_DsBanBe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

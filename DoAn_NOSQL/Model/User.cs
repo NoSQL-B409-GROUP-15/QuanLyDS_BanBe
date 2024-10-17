@@ -9,13 +9,14 @@ namespace DoAn_NOSQL.Model
 
 
 //USER: USER_ID,NAME, USERNAME, PASSWORD, CREATED_AT, MAIL
-    class User
+    public class User
     {
-        public string USER_ID { get; set; }
-        public string NAME { get; set; }
-        public string USERNAME { get; set; }
-        public string PASSWORD { get; set; }
-        public string CREATED_AT { get; set; }
-        public string MAIL { get; set; }
+        public int user_id { get; set; }
+        public string name { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string created_at { get; set; }
+        public string mail { get; set; }
+        public bool HasSendingRequest { get; set; }
     }
 }
