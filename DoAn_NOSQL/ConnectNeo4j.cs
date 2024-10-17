@@ -111,12 +111,14 @@ namespace DoAn_NOSQL
                 try
                 {
                     var result = await session.RunAsync(
-                        "MATCH (u:USER) WHERE NOT(u) -[:IS_FRIEND_WITH]-(: USER { user_id: 3 })" +
-                        " AND u.user_id <> 3 " +
-                        "OPTIONAL MATCH(fr:FRIENDREQUEST { from_user_id: 3, to_user_id: u.user_id, status: 'SENDING'}) " +
-                        "RETURN u, fr IS NOT NULL AS hasSending"
-                       ,
-                        new { id });
+    "MATCH (u:USER) " +
+    "WHERE NOT (u)-[:IS_FRIEND_WITH]-(:USER { user_id: $id }) " +
+    "  AND u.user_id <> $id " +
+    "  AND NOT (u)-[:SENT_REQUEST]->(:FRIENDREQUEST { from_user_id: u.user_id, to_user_id: 3 }) " +
+    "OPTIONAL MATCH (fr:FRIENDREQUEST { from_user_id: 3, to_user_id: u.user_id, status: 'SENDING'}) " +
+    "RETURN u, fr IS NOT NULL AS hasSending",
+    new { id });
+
 
                     while (await result.FetchAsync())
                     {
@@ -188,15 +190,15 @@ namespace DoAn_NOSQL
 
                     if (await result.FetchAsync())
                     {
-                        return result.Current["count"].As<int>() > 0; 
+                        return result.Current["count"].As<int>() > 0;
                     }
 
-                    return false; 
+                    return false;
                 }
                 catch (Exception ex)
                 {
-                 
-                    return false; 
+
+                    return false;
                 }
             }
         }
@@ -210,6 +212,31 @@ namespace DoAn_NOSQL
                   "MATCH (n:FRIENDREQUEST) RETURN n;");
                 var records = await result.ToListAsync();
                 return records.Count;
+            }
+        }
+
+        public async Task<List<User>> ListFriendRequestRecived(int id)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("MATCH (fr:FRIENDREQUEST)-[:RECEIVED_REQUEST]-(u:USER {user_id: 3}) " +
+                    " MATCH(fr) < -[:SENT_REQUEST]-(sender: USER) " +
+                    "MATCH(sender) -[:IS_FRIEND_WITH] - (friend) WHERE friend<> u " +
+                    "WITH sender, COUNT(friend) AS mutualFriend" +
+                    " RETURN sender, mutualFriend ", new { id });
+                var records = await result.ToListAsync();
+                var users = new List<User>();
+
+                foreach (var record in records)
+                {
+                    var userNode = record["sender"].As<INode>();
+                    var user = mapping.MapUser(userNode);
+                    user.mutualFriend = record["mutualFriend"].As<int>();
+                    users.Add(user);
+
+                }
+
+                return users;
             }
         }
     }

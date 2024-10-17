@@ -19,6 +19,7 @@ namespace DoAn_NOSQL
             InitializeComponent();
             SetupDataGridViewFriend(dataFriend);
             SetUpDataGridViewIsNotFriend(dataIsNotFriend);
+            SetUpDataGridViewReceivedRequest(dataRevciedFriendRequest);
             dataFriend.CellContentClick += DataFriend_CellContentClick;
             dataIsNotFriend.CellContentClick += DataIsNotFriend_CellContentClick;
         }
@@ -102,6 +103,9 @@ namespace DoAn_NOSQL
 
                 List<User> notFriendList = await neo4J.NotFriendList(userActivce.user_id);
                 PopulateDataGridViewIsNotFriend(dataIsNotFriend, notFriendList);
+
+                List<User> receivedRequestList = await neo4J.ListFriendRequestRecived(userActivce.user_id);
+                PopulateDataGridViewReceivedRequest(dataRevciedFriendRequest, receivedRequestList);
             }
         }
         private void Form_DsBanBe_Load(object sender, EventArgs e)
@@ -115,7 +119,7 @@ namespace DoAn_NOSQL
             dataGridView.ReadOnly = true;
 
             dataGridView.Columns.Add("User ID", "User ID");
-            dataGridView.Columns.Add("Tên", "Name");
+            dataGridView.Columns.Add("Name", "Tên");
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Thao tác";
             buttonColumn.Text = "Delete";
@@ -128,7 +132,7 @@ namespace DoAn_NOSQL
             dataGridView.RowHeadersVisible = false;
             dataGridView.ReadOnly = true;
             dataGridView.Columns.Add("User ID", "User ID");
-            dataGridView.Columns.Add("Tên", "Name");
+            dataGridView.Columns.Add("Name", "Tên");
 
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
             {
@@ -137,6 +141,31 @@ namespace DoAn_NOSQL
                 UseColumnTextForButtonValue = false
             };
             dataGridView.Columns.Add(buttonColumn);
+        }
+        private void SetUpDataGridViewReceivedRequest(DataGridView dataGridView)
+        {
+            dataGridView.Columns.Clear();
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.ReadOnly = true;
+            dataGridView.Columns.Add("User ID", "User ID");
+            dataGridView.Columns.Add("Name", "Tên");
+            dataGridView.Columns.Add("Characteristic", "Số bạn chung");
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
+            {
+                HeaderText = "Thao tác",
+                Name = "Action1",
+                Text="Chấp nhận",
+                UseColumnTextForButtonValue = true
+            };
+            DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn
+            {
+                HeaderText = "Thao tác",
+                Name = "Action2",
+                Text="Hủy bỏ",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridView.Columns.Add(buttonColumn);
+            dataGridView.Columns.Add(buttonColumn2);
         }
         private void PopulateDataGridViewIsNotFriend(DataGridView dataGridView, List<User> users)
         {
@@ -155,6 +184,19 @@ namespace DoAn_NOSQL
                 dataGridView.Rows.Add(user.user_id, user.name);
             }
         }
-
+        private void PopulateDataGridViewReceivedRequest(DataGridView dataGridView,List<User> users)
+        {
+            if(users.Count==0)
+            {
+                return;
+            }
+            else
+            {
+                foreach (var item in users)
+                {
+                    dataGridView.Rows.Add(item.user_id, item.name, item.mutualFriend);
+                }
+            }
+        }
     }
 }

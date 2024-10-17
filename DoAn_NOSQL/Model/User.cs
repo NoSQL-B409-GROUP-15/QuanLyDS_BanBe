@@ -18,5 +18,6 @@ namespace DoAn_NOSQL.Model
         public string created_at { get; set; }
         public string mail { get; set; }
         public bool HasSendingRequest { get; set; }
+        public int mutualFriend { get; set; }
     }
 }

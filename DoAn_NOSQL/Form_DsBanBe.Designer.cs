@@ -34,18 +34,22 @@ namespace DoAn_NOSQL
             this.dataFriend = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.listIsNotFriend = new System.Windows.Forms.TabPage();
             this.dataIsNotFriend = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dataRevciedFriendRequest = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.listFriend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFriend)).BeginInit();
             this.listIsNotFriend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataIsNotFriend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRevciedFriendRequest)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.listFriend);
             this.tabControl1.Controls.Add(this.listIsNotFriend);
-            this.tabControl1.Location = new System.Drawing.Point(261, 12);
+            this.tabControl1.Location = new System.Drawing.Point(522, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(597, 444);
@@ -59,7 +63,7 @@ namespace DoAn_NOSQL
             this.listFriend.Padding = new System.Windows.Forms.Padding(3);
             this.listFriend.Size = new System.Drawing.Size(589, 411);
             this.listFriend.TabIndex = 0;
-            this.listFriend.Text = "Your friend";
+            this.listFriend.Text = "Bạn bè";
             this.listFriend.UseVisualStyleBackColor = true;
             // 
             // dataFriend
@@ -82,25 +86,46 @@ namespace DoAn_NOSQL
             this.listIsNotFriend.Padding = new System.Windows.Forms.Padding(3);
             this.listIsNotFriend.Size = new System.Drawing.Size(589, 411);
             this.listIsNotFriend.TabIndex = 1;
-            this.listIsNotFriend.Text = "Maybe you know";
+            this.listIsNotFriend.Text = "Có thể bạn biết";
             this.listIsNotFriend.UseVisualStyleBackColor = true;
             // 
             // dataIsNotFriend
             // 
             this.dataIsNotFriend.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataIsNotFriend.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataIsNotFriend.Location = new System.Drawing.Point(13, 6);
+            this.dataIsNotFriend.Location = new System.Drawing.Point(6, 6);
             this.dataIsNotFriend.Name = "dataIsNotFriend";
             this.dataIsNotFriend.RowHeadersWidth = 62;
             this.dataIsNotFriend.RowTemplate.Height = 28;
-            this.dataIsNotFriend.Size = new System.Drawing.Size(570, 388);
+            this.dataIsNotFriend.Size = new System.Drawing.Size(577, 388);
             this.dataIsNotFriend.TabIndex = 1;
+            // 
+            // dataRevciedFriendRequest
+            // 
+            this.dataRevciedFriendRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataRevciedFriendRequest.Location = new System.Drawing.Point(7, 35);
+            this.dataRevciedFriendRequest.Name = "dataRevciedFriendRequest";
+            this.dataRevciedFriendRequest.RowHeadersWidth = 62;
+            this.dataRevciedFriendRequest.RowTemplate.Height = 28;
+            this.dataRevciedFriendRequest.Size = new System.Drawing.Size(352, 399);
+            this.dataRevciedFriendRequest.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataRevciedFriendRequest);
+            this.groupBox1.Location = new System.Drawing.Point(76, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(365, 444);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lời mời bạn kết";
             // 
             // Form_DsBanBe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 493);
+            this.ClientSize = new System.Drawing.Size(1131, 493);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form_DsBanBe";
             this.Text = "Form_DsBanBe";
@@ -110,6 +135,8 @@ namespace DoAn_NOSQL
             ((System.ComponentModel.ISupportInitialize)(this.dataFriend)).EndInit();
             this.listIsNotFriend.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataIsNotFriend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRevciedFriendRequest)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -121,5 +148,7 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.TabPage listIsNotFriend;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataFriend;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataIsNotFriend;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataRevciedFriendRequest;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
