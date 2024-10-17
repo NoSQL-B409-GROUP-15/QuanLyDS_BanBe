@@ -114,8 +114,8 @@ namespace DoAn_NOSQL
     "MATCH (u:USER) " +
     "WHERE NOT (u)-[:IS_FRIEND_WITH]-(:USER { user_id: $id }) " +
     "  AND u.user_id <> $id " +
-    "  AND NOT (u)-[:SENT_REQUEST]->(:FRIENDREQUEST { from_user_id: u.user_id, to_user_id: 3 }) " +
-    "OPTIONAL MATCH (fr:FRIENDREQUEST { from_user_id: 3, to_user_id: u.user_id, status: 'SENDING'}) " +
+    "  AND NOT (u)-[:SENT_REQUEST]->(:FRIENDREQUEST { from_user_id: u.user_id, to_user_id: $id }) " +
+    "OPTIONAL MATCH (fr:FRIENDREQUEST { from_user_id: $id, to_user_id: u.user_id, status: 'SENDING'}) " +
     "RETURN u, fr IS NOT NULL AS hasSending",
     new { id });
 
@@ -219,7 +219,7 @@ namespace DoAn_NOSQL
         {
             using (var session = _driver.AsyncSession())
             {
-                var result = await session.RunAsync("MATCH (fr:FRIENDREQUEST)-[:RECEIVED_REQUEST]-(u:USER {user_id: 3}) " +
+                var result = await session.RunAsync("MATCH (fr:FRIENDREQUEST)-[:RECEIVED_REQUEST]-(u:USER {user_id: $id}) " +
                     " MATCH(fr) < -[:SENT_REQUEST]-(sender: USER) " +
                     "MATCH(sender) -[:IS_FRIEND_WITH] - (friend) WHERE friend<> u " +
                     "WITH sender, COUNT(friend) AS mutualFriend" +
@@ -239,6 +239,35 @@ namespace DoAn_NOSQL
                 return users;
             }
         }
+        public async Task<bool> AcceptFriendRequest(int senderId, int receiverId)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                try
+                {
+                    var result = await session.RunAsync(
+                        "MATCH (fr:FRIENDREQUEST {from_user_id: $senderId, to_user_id: $receiverId}) " +
+                        "MATCH (u1:USER {user_id: $senderId}), (u2:USER {user_id: $receiverId}) " +
+                        "CREATE (u1)-[:IS_FRIEND_WITH {created_at: timestamp(), status: 'ACTIVE'}]->(u2) " +
+                        "DETACH DELETE fr " +
+                        "RETURN COUNT(*) AS count",
+                        new { senderId, receiverId });
+
+                    if (await result.FetchAsync())
+                    {
+                        return result.Current["count"].As<int>() > 0;
+                    }
+
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
+
+
     }
 
 }

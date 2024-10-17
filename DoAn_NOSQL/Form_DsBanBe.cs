@@ -22,6 +22,30 @@ namespace DoAn_NOSQL
             SetUpDataGridViewReceivedRequest(dataRevciedFriendRequest);
             dataFriend.CellContentClick += DataFriend_CellContentClick;
             dataIsNotFriend.CellContentClick += DataIsNotFriend_CellContentClick;
+            dataRevciedFriendRequest.CellContentClick += DataRevciedFriendRequest_CellContentClick;
+        }
+
+        private async void DataRevciedFriendRequest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3 && e.RowIndex >= 0)
+            {
+                var userIdValue = dataIsNotFriend.Rows[e.RowIndex].Cells[0].Value;
+                if(userIdValue!=null && userIdValue!=DBNull.Value)
+                {
+                    int userId = Convert.ToInt32(userIdValue);
+
+                    bool flag = await neo4J.AcceptFriendRequest(userId, userActivce.user_id);
+                   if(flag)
+                    {
+                        MessageBox.Show("Thêm thành công");
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi");
+                    }
+                }
+            }
         }
 
         private async void DataIsNotFriend_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -173,7 +197,7 @@ namespace DoAn_NOSQL
             foreach (var user in users)
             {
                 string action = user.HasSendingRequest ? "Hủy lời mời kết bạn" : "Kết bạn";
-                dataGridView.Rows.Add(user.user_id, user.name, action);
+                dataGridView.Rows.Add(user.user_id, user.username, action);
             }
         }
         private void PopulateDataGridViewFriend(DataGridView dataGridView, List<User> users)
@@ -181,7 +205,7 @@ namespace DoAn_NOSQL
             dataGridView.Rows.Clear();
             foreach (var user in users)
             {
-                dataGridView.Rows.Add(user.user_id, user.name);
+                dataGridView.Rows.Add(user.user_id, user.username);
             }
         }
         private void PopulateDataGridViewReceivedRequest(DataGridView dataGridView,List<User> users)
@@ -192,9 +216,10 @@ namespace DoAn_NOSQL
             }
             else
             {
+                dataGridView.Rows.Clear();
                 foreach (var item in users)
                 {
-                    dataGridView.Rows.Add(item.user_id, item.name, item.mutualFriend);
+                    dataGridView.Rows.Add(item.user_id, item.username, item.mutualFriend);
                 }
             }
         }
