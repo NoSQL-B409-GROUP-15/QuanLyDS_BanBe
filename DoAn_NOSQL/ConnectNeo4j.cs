@@ -429,7 +429,6 @@ namespace DoAn_NOSQL
             }
         }
 
-<<<<<<< HEAD
         public async Task<bool> DeleteRelationshipComment(int comment_id)
         {
             using (var session = _driver.AsyncSession())
@@ -464,7 +463,8 @@ namespace DoAn_NOSQL
                 );
 
                 return await result.FetchAsync();
-=======
+            }
+        }
         public async Task<User> GetUserByIdAsync(int userId)
         {
             using (var session = _driver.AsyncSession())
@@ -490,10 +490,41 @@ namespace DoAn_NOSQL
                     Console.WriteLine($"Error while retrieving user: {ex.Message}");
                     return null;
                 }
->>>>>>> 3e60a166f4409027a3d2373eae03e9bfc7fdbf57
             }
         }
 
+        public async Task<List<User>> ListMutalFriend(int userID1, int userID2)
+        {
+           using(var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("MATCH (u1:USER {user_id: $userID1})-[:IS_FRIEND_WITH]-(mutualFriend:USER)-[:IS_FRIEND_WITH]-(u2:USER {user_id: $userID2}) RETURN mutualFriend", new { userID1, userID2 });
+                var users = new List<User>();
+                var records = await result.ToListAsync();
+                foreach (var record in records)
+                {
+                    var userNode = record["mutualFriend"].As<INode>();
+
+                    users.Add(mapping.MapUser(userNode));
+                }
+                return users;
+            }
+        }
+
+        public async Task<User> GetUsers(int id)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("MATCH(u:USER{user_id:$id}) RETURN u", new { id });
+                var records = await result.ToListAsync();
+
+                if (records.Count > 0)
+                {
+                    var userNode = records[0]["u"].As<INode>();
+                    return mapping.MapUser(userNode);
+                }
+                return null;
+            }
+        }
     }
 
 }

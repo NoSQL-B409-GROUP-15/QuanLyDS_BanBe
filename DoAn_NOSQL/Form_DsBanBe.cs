@@ -14,13 +14,76 @@ namespace DoAn_NOSQL
     {
         public User userActivce { get; set; }
         ConnectNeo4j neo4J = new ConnectNeo4j();
+        public int userClick { get; set; }
+        public int DataSelected { get; set; }
         public Form_DsBanBe()
         {
             InitializeComponent();
+            userClick = 0;
             this.Load += Form_DsBanBe_Load;
             dataFriend.CellContentClick += DataFriend_CellContentClick;
+            dataFriend.MouseDown += DataFriend_MouseDown;
+
             dataIsNotFriend.CellContentClick += DataIsNotFriend_CellContentClick;
+            dataIsNotFriend.MouseDown += DataIsNotFriend_MouseDown;
             dataRevciedFriendRequest.CellContentClick += DataRevciedFriendRequest_CellContentClick;
+            dataRevciedFriendRequest.MouseDown += DataRevciedFriendRequest_MouseDown;
+          
+        }
+        private void DataRevciedFriendRequest_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hitTestInfo = dataRevciedFriendRequest.HitTest(e.X, e.Y);
+
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dataRevciedFriendRequest.ClearSelection();
+                    dataRevciedFriendRequest.Rows[hitTestInfo.RowIndex].Selected = true;
+                    DataSelected = int.Parse(dataRevciedFriendRequest.Rows[hitTestInfo.RowIndex].Cells[0].Value.ToString());
+                    Point mousePosition = dataRevciedFriendRequest.PointToClient(MousePosition);
+                    cmsView.Show(dataRevciedFriendRequest, mousePosition);
+                 
+                }
+            }
+        }
+
+        private void DataIsNotFriend_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hitTestInfo = dataIsNotFriend.HitTest(e.X, e.Y);
+
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dataIsNotFriend.ClearSelection();
+                    dataIsNotFriend.Rows[hitTestInfo.RowIndex].Selected = true;
+                    DataSelected = int.Parse(dataIsNotFriend.Rows[hitTestInfo.RowIndex].Cells[0].Value.ToString());
+
+                    Point mousePosition = dataIsNotFriend.PointToClient(MousePosition);
+                    cmsView.Show(dataIsNotFriend, mousePosition);
+
+                }
+            }
+        }
+
+        private void DataFriend_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hitTestInfo = dataFriend.HitTest(e.X, e.Y);
+
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dataFriend.ClearSelection();
+                    dataFriend.Rows[hitTestInfo.RowIndex].Selected = true;
+                    DataSelected = int.Parse(dataFriend.Rows[hitTestInfo.RowIndex].Cells[0].Value.ToString());
+
+                    Point mousePosition = dataFriend.PointToClient(MousePosition);
+                    cmsView.Show(dataFriend, mousePosition);
+
+                }
+            }
         }
 
         private async void DataRevciedFriendRequest_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -269,6 +332,12 @@ namespace DoAn_NOSQL
                 MessageBox.Show("đợi tí");
             }
 
+        }
+        public event EventHandler EventClick;
+        private void xemTrangCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            userClick = 1;
+            EventClick.Invoke(this, EventArgs.Empty);
         }
     }
 }

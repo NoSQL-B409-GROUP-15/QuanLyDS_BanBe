@@ -29,6 +29,7 @@ namespace DoAn_NOSQL
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.listFriend = new System.Windows.Forms.TabPage();
             this.dataFriend = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -36,6 +37,8 @@ namespace DoAn_NOSQL
             this.dataIsNotFriend = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.dataRevciedFriendRequest = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmsView = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xemTrangCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.listFriend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFriend)).BeginInit();
@@ -43,6 +46,7 @@ namespace DoAn_NOSQL
             ((System.ComponentModel.ISupportInitialize)(this.dataIsNotFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataRevciedFriendRequest)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.cmsView.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -123,6 +127,22 @@ namespace DoAn_NOSQL
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lời mời bạn kết";
             // 
+            // cmsView
+            // 
+            this.cmsView.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmsView.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.cmsView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xemTrangCáNhânToolStripMenuItem});
+            this.cmsView.Name = "cmsView";
+            this.cmsView.Size = new System.Drawing.Size(241, 69);
+            // 
+            // xemTrangCáNhânToolStripMenuItem
+            // 
+            this.xemTrangCáNhânToolStripMenuItem.Name = "xemTrangCáNhânToolStripMenuItem";
+            this.xemTrangCáNhânToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.xemTrangCáNhânToolStripMenuItem.Text = "Xem trang cá nhân";
+            this.xemTrangCáNhânToolStripMenuItem.Click += new System.EventHandler(this.xemTrangCáNhânToolStripMenuItem_Click);
+            // 
             // Form_DsBanBe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -139,6 +159,7 @@ namespace DoAn_NOSQL
             ((System.ComponentModel.ISupportInitialize)(this.dataIsNotFriend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataRevciedFriendRequest)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.cmsView.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -152,5 +173,7 @@ namespace DoAn_NOSQL
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataIsNotFriend;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataRevciedFriendRequest;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ContextMenuStrip cmsView;
+        private System.Windows.Forms.ToolStripMenuItem xemTrangCáNhânToolStripMenuItem;
     }
 }

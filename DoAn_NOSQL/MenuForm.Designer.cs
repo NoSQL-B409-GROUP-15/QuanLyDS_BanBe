@@ -215,7 +215,7 @@ namespace DoAn_NOSQL
             this.btn_order.TabIndex = 8;
             this.btn_order.Values.Image = ((System.Drawing.Image)(resources.GetObject("btn_order.Values.Image")));
             this.btn_order.Values.Text = " Trang cá nhân";
-            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
+           // this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // menuTransition
             // 

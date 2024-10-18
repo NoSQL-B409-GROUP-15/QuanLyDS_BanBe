@@ -55,8 +55,20 @@ namespace DoAn_NOSQL
         {
             Form_DsBanBe bb = new Form_DsBanBe();
             bb.userActivce=userActive;
+            bb.EventClick += Bb_EventClick;
             util.OpenChildForm(bb, panelBody);
 
+        }
+
+        private void Bb_EventClick(object sender, EventArgs e)
+        {
+            Form_DsBanBe bb = (Form_DsBanBe)sender;
+            if(bb.userClick==1)
+            {
+                ViewProfileUserForm viewShowProfile = new ViewProfileUserForm();
+                viewShowProfile.PaintData(bb.DataSelected, userActive);
+                util.OpenChildForm(viewShowProfile, panelBody); 
+            }
         }
 
         private void btn_post_Click(object sender, EventArgs e)
@@ -66,11 +78,11 @@ namespace DoAn_NOSQL
             util.OpenChildForm(post, panelBody);
         }
 
-        private void btn_order_Click(object sender, EventArgs e)
-        {
-            PersonalForm personal = new PersonalForm();
-            personal.userActive = userActive;
-            util.OpenChildForm(personal, panelBody);
-        }
+        //private void btn_order_Click(object sender, EventArgs e)
+        //{
+        //    PersonalForm personal = new PersonalForm();
+        //    personal.userActive = userActive;
+        //    util.OpenChildForm(personal, panelBody);
+        //}
     }
 }

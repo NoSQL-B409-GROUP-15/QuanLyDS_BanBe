@@ -73,6 +73,16 @@ namespace DoAn_NOSQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hehe_nosql_drawio {
+            get {
+                object obj = ResourceManager.GetObject("hehe_nosql.drawio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap unlike {
             get {
                 object obj = ResourceManager.GetObject("unlike", resourceCulture);

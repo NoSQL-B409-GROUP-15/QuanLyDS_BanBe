@@ -35,3 +35,4 @@ C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.u_comment.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.u_Post.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.csproj.AssemblyReference.cache
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.PostForm.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.ViewProfileUserForm.resources
