@@ -402,6 +402,35 @@ namespace DoAn_NOSQL
                 return records.Count;
             }
         }
+
+        public async Task<User> GetUserByIdAsync(int userId)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                try
+                {
+                    var result = await session.RunAsync(
+                        "MATCH (u:USER {user_id: $userId}) RETURN u",
+                        new { userId });
+
+                    var record = await result.SingleAsync();
+
+                    if (record != null)
+                    {
+                        var userNode = record["u"].As<INode>();
+                        return mapping.MapUser(userNode);
+                    }
+
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error while retrieving user: {ex.Message}");
+                    return null;
+                }
+            }
+        }
+
     }
 
 }

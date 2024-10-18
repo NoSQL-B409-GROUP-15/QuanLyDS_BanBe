@@ -63,8 +63,14 @@ namespace DoAn_NOSQL
         {
             PostForm post = new PostForm();
             post.userActive = userActive;
-            
             util.OpenChildForm(post, panelBody);
+        }
+
+        private void btn_order_Click(object sender, EventArgs e)
+        {
+            PersonalForm personal = new PersonalForm();
+            personal.userActive = userActive;
+            util.OpenChildForm(personal, panelBody);
         }
     }
 }
