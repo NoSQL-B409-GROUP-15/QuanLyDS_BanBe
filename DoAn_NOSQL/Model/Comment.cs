@@ -13,5 +13,6 @@ namespace DoAn_NOSQL.Model
         public int comment_id { get; set; }
         public string content { get; set; }
         public string created_at { get; set; }
+        public User commenter { get; set; }
     }
 }

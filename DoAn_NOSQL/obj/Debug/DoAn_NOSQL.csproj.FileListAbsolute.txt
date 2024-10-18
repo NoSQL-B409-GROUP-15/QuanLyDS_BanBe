@@ -29,9 +29,9 @@ C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.exe
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.pdb
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.Form_DangNhap.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.Form_DsBanBe.resources
-C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.Post.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.MenuForm.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.Util.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.u_comment.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.u_Post.resources
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.csproj.AssemblyReference.cache
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.PostForm.resources

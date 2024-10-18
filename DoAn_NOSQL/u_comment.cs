@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DoAn_NOSQL.Model;
 namespace DoAn_NOSQL
 {
     public partial class u_comment : UserControl
@@ -16,7 +16,11 @@ namespace DoAn_NOSQL
         {
             InitializeComponent();
         }
-
+        public void PaintData(Comment comment)
+        {
+            lblNoiDungComment.Text = comment.content;
+            lblNguoiCmt.Text = comment.commenter.name;
+        }
         private void u_comment_Load(object sender, EventArgs e)
         {
 

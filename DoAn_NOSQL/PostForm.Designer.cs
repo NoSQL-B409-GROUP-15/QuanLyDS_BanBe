@@ -1,7 +1,7 @@
 ﻿
 namespace DoAn_NOSQL
 {
-    partial class Post
+    partial class PostForm
     {
         /// <summary>
         /// Required designer variable.
@@ -71,14 +71,14 @@ namespace DoAn_NOSQL
             this.listPost.Size = new System.Drawing.Size(800, 509);
             this.listPost.TabIndex = 4;
             // 
-            // Post
+            // PostForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 651);
             this.Controls.Add(this.listPost);
             this.Controls.Add(this.panel1);
-            this.Name = "Post";
+            this.Name = "PostForm";
             this.Text = "Post";
             this.Load += new System.EventHandler(this.Post_Load);
             this.panel1.ResumeLayout(false);

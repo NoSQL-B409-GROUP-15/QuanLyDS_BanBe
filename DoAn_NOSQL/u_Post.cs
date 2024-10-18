@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using DoAn_NOSQL.Model;
 namespace DoAn_NOSQL
 {
     public partial class u_Post : UserControl
@@ -11,19 +11,19 @@ namespace DoAn_NOSQL
         public u_Post()
         {
             InitializeComponent();
-            loadTest();
             btnLike.Click += BtnLike_Click;
         }
-        public void loadTest()
+        public void PaintData(Post post)
         {
-            for(int i =0;i<5;i++)
+            lblNoiDungBaiDang.Text = post.content;
+            foreach (var item in post.Comments)
             {
-                this.panel_binhluan.Controls.Add(new u_comment() { 
-                    Width= this.panel_binhluan.Width-10
-            
-                });
+                u_comment u = new u_comment();
+                u.PaintData(item);
+                this.panel_binhluan.Controls.Add(u);
             }
         }
+
         private void BtnLike_Click(object sender, EventArgs e)
         {
             isLiked = !isLiked; // Toggle the like status

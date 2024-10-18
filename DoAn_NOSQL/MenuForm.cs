@@ -61,7 +61,9 @@ namespace DoAn_NOSQL
 
         private void btn_post_Click(object sender, EventArgs e)
         {
-            Post post = new Post();
+            PostForm post = new PostForm();
+            post.userActive = userActive;
+            
             util.OpenChildForm(post, panelBody);
         }
     }
