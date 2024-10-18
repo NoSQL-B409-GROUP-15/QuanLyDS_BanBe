@@ -34,10 +34,12 @@ namespace DoAn_NOSQL
             if (us != null)
             {
                 this.Hide();
-                Form_DsBanBe ff = new Form_DsBanBe();
+              //  Form_DsBanBe ff = new Form_DsBanBe();
                 
-                ff.userActivce = us;
-                ff.ShowDialog();
+                MenuForm mf = new MenuForm();
+                mf.userActive = us;
+             //   ff.userActivce = us;
+                mf.ShowDialog();
                 this.Close();
             }
             else

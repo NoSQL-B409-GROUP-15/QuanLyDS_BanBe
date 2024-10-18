@@ -203,7 +203,6 @@ namespace DoAn_NOSQL
             }
         }
 
-
         public async Task<int> GetRequestID()
         {
             using (var session = _driver.AsyncSession())

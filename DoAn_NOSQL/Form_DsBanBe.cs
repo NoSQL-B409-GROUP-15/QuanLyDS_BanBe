@@ -17,9 +17,7 @@ namespace DoAn_NOSQL
         public Form_DsBanBe()
         {
             InitializeComponent();
-            SetupDataGridViewFriend(dataFriend);
-            SetUpDataGridViewIsNotFriend(dataIsNotFriend);
-            SetUpDataGridViewReceivedRequest(dataRevciedFriendRequest);
+            this.Load += Form_DsBanBe_Load;
             dataFriend.CellContentClick += DataFriend_CellContentClick;
             dataIsNotFriend.CellContentClick += DataIsNotFriend_CellContentClick;
             dataRevciedFriendRequest.CellContentClick += DataRevciedFriendRequest_CellContentClick;
@@ -38,6 +36,25 @@ namespace DoAn_NOSQL
                     if(flag)
                     {
                         MessageBox.Show("Thêm thành công");
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi");
+                    }
+                }
+            }
+            if(e.ColumnIndex==4 && e.RowIndex>=0)
+            {
+                var userIdValue = dataRevciedFriendRequest.Rows[e.RowIndex].Cells[0].Value;
+                if (userIdValue != null && userIdValue != DBNull.Value)
+                {
+                    int userId = Convert.ToInt32(userIdValue);
+
+                    bool flag = await neo4J.CancelFriendRequest(userId, userActivce.user_id);
+                    if (flag)
+                    {
+                        MessageBox.Show("Đã gỡ lời mời kết bạn");
                         LoadData();
                     }
                     else
@@ -123,17 +140,20 @@ namespace DoAn_NOSQL
             if (userActivce != null)
             {
                 List<User> friendsList = await neo4J.ListIsFriendOfUser(userActivce.user_id);
-                PopulateDataGridViewFriend(dataFriend, friendsList);
+                PopulateDataGridViewFriend(friendsList);
 
                 List<User> notFriendList = await neo4J.NotFriendList(userActivce.user_id);
-                PopulateDataGridViewIsNotFriend(dataIsNotFriend, notFriendList);
+                PopulateDataGridViewIsNotFriend(notFriendList);
 
                 List<User> receivedRequestList = await neo4J.ListFriendRequestRecived(userActivce.user_id);
-                PopulateDataGridViewReceivedRequest(dataRevciedFriendRequest, receivedRequestList);
+                PopulateDataGridViewReceivedRequest(receivedRequestList);
             }
         }
         private void Form_DsBanBe_Load(object sender, EventArgs e)
         {
+            SetupDataGridViewFriend(dataFriend);
+            SetUpDataGridViewIsNotFriend(dataIsNotFriend);
+            SetUpDataGridViewReceivedRequest(dataRevciedFriendRequest);
             LoadData();
         }
         private void SetupDataGridViewFriend(DataGridView dataGridView)
@@ -191,38 +211,64 @@ namespace DoAn_NOSQL
             dataGridView.Columns.Add(buttonColumn);
             dataGridView.Columns.Add(buttonColumn2);
         }
-        private void PopulateDataGridViewIsNotFriend(DataGridView dataGridView, List<User> users)
+        private void PopulateDataGridViewIsNotFriend(List<User> users)
         {
-            dataGridView.Rows.Clear();
-            foreach (var user in users)
+            try
             {
-                string action = user.HasSendingRequest ? "Hủy lời mời kết bạn" : "Kết bạn";
-                dataGridView.Rows.Add(user.user_id, user.username, action);
-            }
-        }
-        private void PopulateDataGridViewFriend(DataGridView dataGridView, List<User> users)
-        {
-            dataGridView.Rows.Clear();
-            foreach (var user in users)
-            {
-                dataGridView.Rows.Add(user.user_id, user.username);
-            }
-        }
-        private void PopulateDataGridViewReceivedRequest(DataGridView dataGridView,List<User> users)
-        {
-            dataGridView.Rows.Clear();
-            if (users.Count==0)
-            {
-                return;
-            }
-            else
-            {
- 
-                foreach (var item in users)
+                dataIsNotFriend.Rows.Clear();
+                foreach (var user in users)
                 {
-                    dataGridView.Rows.Add(item.user_id, item.username, item.mutualFriend);
+                    string action = user.HasSendingRequest ? "Hủy lời mời kết bạn" : "Kết bạn";
+                    dataIsNotFriend.Rows.Add(user.user_id, user.username, action);
                 }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("đợi tí");
+            }
+           
+        }
+        private void PopulateDataGridViewFriend(List<User> users)
+        {
+            try
+            {
+                dataFriend.Rows.Clear();
+                foreach (var user in users)
+                {
+                    dataFriend.Rows.Add(user.user_id, user.username);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        private void PopulateDataGridViewReceivedRequest(List<User> users)
+        {
+            try
+            {
+                dataRevciedFriendRequest.Rows.Clear();
+                if (users.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+
+                    foreach (var item in users)
+                    {
+                        dataRevciedFriendRequest.Rows.Add(item.user_id, item.username, item.mutualFriend);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+               
+                MessageBox.Show("đợi tí");
+            }
+
         }
     }
 }
