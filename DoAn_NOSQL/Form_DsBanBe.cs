@@ -29,13 +29,13 @@ namespace DoAn_NOSQL
         {
             if (e.ColumnIndex == 3 && e.RowIndex >= 0)
             {
-                var userIdValue = dataIsNotFriend.Rows[e.RowIndex].Cells[0].Value;
+                var userIdValue = dataRevciedFriendRequest.Rows[e.RowIndex].Cells[0].Value;
                 if(userIdValue!=null && userIdValue!=DBNull.Value)
                 {
                     int userId = Convert.ToInt32(userIdValue);
 
                     bool flag = await neo4J.AcceptFriendRequest(userId, userActivce.user_id);
-                   if(flag)
+                    if(flag)
                     {
                         MessageBox.Show("Thêm thành công");
                         LoadData();
@@ -210,13 +210,14 @@ namespace DoAn_NOSQL
         }
         private void PopulateDataGridViewReceivedRequest(DataGridView dataGridView,List<User> users)
         {
-            if(users.Count==0)
+            dataGridView.Rows.Clear();
+            if (users.Count==0)
             {
                 return;
             }
             else
             {
-                dataGridView.Rows.Clear();
+ 
                 foreach (var item in users)
                 {
                     dataGridView.Rows.Add(item.user_id, item.username, item.mutualFriend);

@@ -219,19 +219,18 @@ namespace DoAn_NOSQL
         {
             using (var session = _driver.AsyncSession())
             {
-                var result = await session.RunAsync("MATCH (fr:FRIENDREQUEST)-[:RECEIVED_REQUEST]-(u:USER {user_id: $id}) " +
-                    " MATCH(fr) < -[:SENT_REQUEST]-(sender: USER) " +
-                    "MATCH(sender) -[:IS_FRIEND_WITH] - (friend) WHERE friend<> u " +
-                    "WITH sender, COUNT(friend) AS mutualFriend" +
-                    " RETURN sender, mutualFriend ", new { id });
+                var result = await session.RunAsync("MATCH (fr:FRIENDREQUEST {to_user_id: $id})" +
+                    " MATCH(fr) -[:SENT_REQUEST]-(u2: USER) " +
+                    "OPTIONAL MATCH(u2)-[:IS_FRIEND_WITH] - (mutualFriend: USER) -[:IS_FRIEND_WITH] - (u: USER { user_id: $id}) " +
+                    "RETURN u2, COUNT(mutualFriend) AS mutualFriend", new { id});
                 var records = await result.ToListAsync();
                 var users = new List<User>();
 
                 foreach (var record in records)
                 {
-                    var userNode = record["sender"].As<INode>();
+                    var userNode = record["u2"].As<INode>();
                     var user = mapping.MapUser(userNode);
-                    user.mutualFriend = record["mutualFriend"].As<int>();
+                   user.mutualFriend = record["mutualFriend"].As<int>();
                     users.Add(user);
 
                 }
@@ -246,11 +245,10 @@ namespace DoAn_NOSQL
                 try
                 {
                     var result = await session.RunAsync(
-                        "MATCH (fr:FRIENDREQUEST {from_user_id: $senderId, to_user_id: $receiverId}) " +
-                        "MATCH (u1:USER {user_id: $senderId}), (u2:USER {user_id: $receiverId}) " +
-                        "CREATE (u1)-[:IS_FRIEND_WITH {created_at: timestamp(), status: 'ACTIVE'}]->(u2) " +
-                        "DETACH DELETE fr " +
-                        "RETURN COUNT(*) AS count",
+                      " MATCH(fr: FRIENDREQUEST { from_user_id: $senderId, to_user_id: $receiverId})" +
+                      " MATCH(u1: USER { user_id: $senderId}), (u2: USER { user_id: $receiverId}) " +
+                      " CREATE(u1) -[:IS_FRIEND_WITH]->(u2) " +
+                      " DETACH DELETE fr RETURN COUNT(*) AS count",
                         new { senderId, receiverId });
 
                     if (await result.FetchAsync())
