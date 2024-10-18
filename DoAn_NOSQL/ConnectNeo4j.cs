@@ -313,11 +313,9 @@ namespace DoAn_NOSQL
 
                 while (await result.FetchAsync())
                 {
-                    // Ánh xạ Post từ Node
                     var postNode = result.Current["p"].As<INode>();
                     var postId = postNode.Properties["post_id"].As<int>();
 
-                    // Kiểm tra xem Post đã tồn tại trong danh sách chưa
                     var post = posts.FirstOrDefault(p => p.post_id == postId);
 
                     if (post == null)
@@ -333,7 +331,6 @@ namespace DoAn_NOSQL
                         posts.Add(post);
                     }
 
-                    // Lấy bình luận nếu có
                     var commentNode = result.Current["c"]?.As<INode>();
                     if (commentNode != null)
                     {
@@ -345,14 +342,12 @@ namespace DoAn_NOSQL
                             commenter = null
                         };
 
-                        // Lấy thông tin người bình luận nếu có
                         var commenterNode = result.Current["commenter"]?.As<INode>();
                         if (commenterNode != null)
                         {
                             comment.commenter = mapping.MapUser(commenterNode);
                         }
 
-                        // Thêm comment vào danh sách bình luận của post
                         post.Comments.Add(comment);
                     }
                 }
@@ -360,63 +355,6 @@ namespace DoAn_NOSQL
                 return posts;
             }
         }
-
-        //public async Task<List<Post>> GetPostsWithUser(int id)
-        //{
-        //    using (var session = _driver.AsyncSession())
-        //    {
-        //        var result = await session.RunAsync("MATCH (u:USER{user_id:$id})-[:POSTED]->(p:POST)" +
-        //            " OPTIONAL MATCH(p) -[:HAS_COMMENT]->(c: COMMENT)" +
-        //            " OPTIONAL MATCH(c)-[:COMMENTED] - (commenter: USER) " +
-        //            "RETURN p, c, commenter", new { id });
-
-        //        var posts = new List<Post>();
-
-        //        while (await result.FetchAsync())
-        //        {
-        //            // Ánh xạ Post từ Node
-        //            var postNode = result.Current["p"].As<INode>(); // Lấy node kiểu INode
-        //            var post = new Post
-        //            {
-        //                post_id = postNode.Properties["post_id"].As<int>(),
-        //                content = postNode.Properties["content"].As<string>(),        
-        //                created_at = DateTimeOffset.FromUnixTimeMilliseconds((long)postNode.Properties["created_at"]).ToString("yyyy-MM-dd HH:mm:ss"),
-        //                Comments = new List<Comment>()
-        //            };
-
-        //            // Lấy bình luận
-        //            var commentNode = result.Current["c"]?.As<INode>(); // Kiểm tra comment có null hay không
-        //            if (commentNode != null)
-        //            {
-        //                var comment = new Comment
-        //                {
-        //                    comment_id = commentNode.Properties["comment_id"].As<int>(),
-        //                    content = commentNode.Properties["content"].As<string>(),
-        //                    created_at = DateTimeOffset.FromUnixTimeMilliseconds((long)postNode.Properties["created_at"]).ToString("yyyy-MM-dd HH:mm:ss"),
-        //                    commenter = null 
-        //                };
-
-        //                // Lấy thông tin người bình luận
-        //                var commenterNode = result.Current["commenter"]?.As<INode>();
-        //                if (commenterNode != null)
-        //                {
-        //                    comment.commenter = mapping.MapUser(commenterNode);
-        //                }
-
-        //                // Thêm bình luận vào post
-        //                post.Comments.Add(comment);
-        //            }
-
-        //            // Kiểm tra xem post đã tồn tại trong danh sách chưa
-        //            var existingPost = posts.FirstOrDefault(p => p.post_id == post.post_id);
-        //            if (existingPost == null)
-        //            {
-        //                posts.Add(post);
-        //            }
-        //        }
-        //        return posts;
-        //    }
-        //}
 
     }
 

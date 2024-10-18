@@ -69,7 +69,7 @@ namespace DoAn_NOSQL
             this.btnXoaCmt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnXoaCmt.Location = new System.Drawing.Point(0, 0);
             this.btnXoaCmt.Name = "btnXoaCmt";
-            this.btnXoaCmt.Size = new System.Drawing.Size(50, 29);
+            this.btnXoaCmt.Size = new System.Drawing.Size(64, 29);
             this.btnXoaCmt.TabIndex = 3;
             this.btnXoaCmt.Text = "Xóa";
             this.btnXoaCmt.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@ namespace DoAn_NOSQL
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btnXoaCmt);
-            this.panel2.Location = new System.Drawing.Point(875, 6);
+            this.panel2.Location = new System.Drawing.Point(857, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(50, 29);
+            this.panel2.Size = new System.Drawing.Size(64, 29);
             this.panel2.TabIndex = 4;
             // 
             // u_comment
