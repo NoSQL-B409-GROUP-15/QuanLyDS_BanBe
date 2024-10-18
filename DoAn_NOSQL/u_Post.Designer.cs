@@ -39,7 +39,7 @@ namespace DoAn_NOSQL
             this.btnBinhLuan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_binhluan = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblSoLikes = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.haha = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblSoBinhLuan = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@ namespace DoAn_NOSQL
             // 
             // lblNumberLike
             // 
-            this.lblNumberLike.Location = new System.Drawing.Point(86, 163);
+            this.lblNumberLike.Location = new System.Drawing.Point(219, 163);
             this.lblNumberLike.Name = "lblNumberLike";
             this.lblNumberLike.Size = new System.Drawing.Size(116, 29);
             this.lblNumberLike.TabIndex = 4;
@@ -131,13 +131,13 @@ namespace DoAn_NOSQL
             this.panel_binhluan.Size = new System.Drawing.Size(1117, 235);
             this.panel_binhluan.TabIndex = 10;
             // 
-            // lblSoLikes
+            // haha
             // 
-            this.lblSoLikes.Location = new System.Drawing.Point(209, 163);
-            this.lblSoLikes.Name = "lblSoLikes";
-            this.lblSoLikes.Size = new System.Drawing.Size(129, 29);
-            this.lblSoLikes.TabIndex = 11;
-            this.lblSoLikes.Values.Text = "kryptonLabel1";
+            this.haha.Location = new System.Drawing.Point(97, 162);
+            this.haha.Name = "haha";
+            this.haha.Size = new System.Drawing.Size(116, 29);
+            this.haha.TabIndex = 11;
+            this.haha.Values.Text = "Số lượt thích";
             // 
             // lblSoBinhLuan
             // 
@@ -153,7 +153,7 @@ namespace DoAn_NOSQL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblSoBinhLuan);
-            this.Controls.Add(this.lblSoLikes);
+            this.Controls.Add(this.haha);
             this.Controls.Add(this.panel_binhluan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBinhLuan);
@@ -184,7 +184,7 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.Button btnBinhLuan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel panel_binhluan;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSoLikes;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel haha;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSoBinhLuan;
     }
 }

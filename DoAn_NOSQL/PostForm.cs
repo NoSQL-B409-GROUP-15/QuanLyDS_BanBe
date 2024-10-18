@@ -52,12 +52,41 @@ namespace DoAn_NOSQL
         }
         public async void LoadPostData()
         {
+            this.listPost.Controls.Clear();
             List<Post> taskListPost = await neo4J.GetPostsWithUser(userActive.user_id);
+            List<Post> isLikePost = await neo4J.GetLikesPosts(userActive.user_id);
+          
             foreach (var item in taskListPost)
             {
+                if(isLikePost.Find(t=>t.post_id == item.post_id)!=null)
+                {
+                    item.isLike = true;              
+                }
                 u_Post u_Post = new u_Post();
-                u_Post.PaintData(item,userActive);
+                u_Post.EventBinhLuan += U_Post_EventBinhLuan;
+                u_Post.EventLike += U_Post_EventLike;
+                u_Post.PaintData(item, userActive);
+
                 this.listPost.Controls.Add(u_Post);
+
+            }
+        }
+
+        private void U_Post_EventLike(object sender, EventArgs e)
+        {
+            u_Post u_ = (u_Post)sender;
+            if (u_.user_action == 1)
+            {
+                LoadPostData();
+            }
+        }
+
+        private void U_Post_EventBinhLuan(object sender, EventArgs e)
+        {
+            u_Post u_ = (u_Post)sender;
+            if(u_.user_action == 1)
+            {
+                LoadPostData();
             }
         }
     }

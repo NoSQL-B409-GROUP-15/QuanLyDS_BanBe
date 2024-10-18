@@ -13,6 +13,7 @@ namespace DoAn_NOSQL.Model
         public string created_at { get; set; }
         public List<Comment> Comments { get; set; } // Chú ý sử dụng `Comments` với chữ cái hoa
         public int countLikes { get; set; }
+        public bool isLike { get; set; }
         public Post()
         {
             Comments = new List<Comment>(); // Khởi tạo danh sách comments

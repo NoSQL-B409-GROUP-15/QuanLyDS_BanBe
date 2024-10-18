@@ -305,10 +305,10 @@ namespace DoAn_NOSQL
             using (var session = _driver.AsyncSession())
             {
                 var result = await session.RunAsync("MATCH (u:USER{user_id:$id})-[:POSTED]-(p:POST) " +
-                   "OPTIONAL MATCH (p)-[:Likes]-(l:USER)"+
+                   "OPTIONAL MATCH (p)-[:Likes]-(l:USER)" +
                     "OPTIONAL MATCH(p) -[:HAS_COMMENT]-(c: COMMENT) " +
                     "OPTIONAL MATCH(c)-[:COMMENTED] - (commenter: USER) " +
-                    "RETURN p, c,count(l) as numberLike, commenter ", new { id });
+                    "RETURN p, c,count(l) as numberLike, commenter", new { id });
 
                 var posts = new List<Post>();
 
@@ -317,7 +317,7 @@ namespace DoAn_NOSQL
                     var postNode = result.Current["p"].As<INode>();
                     var postId = postNode.Properties["post_id"].As<int>();
                     var countLike = result.Current["numberLike"].As<int>();
-                    
+
                     var post = posts.FirstOrDefault(p => p.post_id == postId);
 
                     if (post == null)
@@ -359,11 +359,37 @@ namespace DoAn_NOSQL
             }
         }
 
+        public async Task<List<Post>> GetLikesPosts(int id)
+        {
+            List<Post> list = new List<Post>();
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("match (p:POST)-[:Likes]-(u:USER{user_id:$id}) return p", new { id });
+                var records = await result.ToListAsync();
+
+                foreach (var record in records)
+                {
+                    var pNode = record["p"].As<INode>();
+                    var post = new Post
+                    {
+                        post_id = pNode.Properties["post_id"].As<int>(),
+                        content = pNode.Properties["content"].As<string>(),
+                        created_at = DateTimeOffset.FromUnixTimeMilliseconds((long)pNode.Properties["created_at"])
+                                           .ToString("yyyy-MM-dd HH:mm:ss"),
+                        Comments = new List<Comment>(),
+                        isLike = true
+                    };
+                    list.Add(post);
+                }
+                return list;
+            }
+        }
         public async Task<bool> CreateCommentPost(int userId, int post_id, string content)
         {
             using (var session = _driver.AsyncSession())
             {
-                int comment_id = await GetCommentIDNext() + 1;
+                int comment_id = await GetCommentIDNext();
+                comment_id++;
                 try
                 {
                     var result = await session.RunAsync(
@@ -378,8 +404,8 @@ namespace DoAn_NOSQL
                             userId,
                             post_id,
                             content,
-                            comment_id, 
-                
+                            comment_id,
+
                         });
 
                     return result != null;
@@ -397,11 +423,49 @@ namespace DoAn_NOSQL
         {
             using (var session = _driver.AsyncSession())
             {
-                var result = await session.RunAsync("MATCH(N:COMMENT) RETURN COUNT(N)");
+                var result = await session.RunAsync("MATCH(N:COMMENT) RETURN N");
                 var records = await result.ToListAsync();
                 return records.Count;
             }
         }
+
+        public async Task<bool> DeleteRelationshipComment(int comment_id)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync(
+                    "MATCH (p:POST)-[r:HAS_COMMENT]-(c:COMMENT {comment_id: $comment_id}) " +
+                    "DETACH DELETE c",
+                    new { comment_id });
+
+                return result.ConsumeAsync().Result.Counters.RelationshipsDeleted > 0;
+            }
+        }
+
+
+        public async Task<bool> DeleteRelationshipLike(int userId, int post_id)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("match (p:POST{post_id:$post_id})-[r:Likes]-(u:USER{user_id:$userId}) delete r", new { post_id, userId });
+                return result.ConsumeAsync().Result.Counters.RelationshipsDeleted > 0;
+            }
+        }
+        public async Task<bool> CreateRelationshipLike(int userId, int post_id)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync(
+                    "MATCH (u:USER {user_id: $userId}), (p:POST {post_id: $post_id}) " +
+                    "MERGE (u)-[:Likes]->(p) " +
+                    "RETURN u, p",
+                    new { userId, post_id }
+                );
+
+                return await result.FetchAsync();
+            }
+        }
+
     }
 
 }

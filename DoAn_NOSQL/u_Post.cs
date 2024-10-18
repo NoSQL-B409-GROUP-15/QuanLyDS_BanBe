@@ -10,12 +10,15 @@ namespace DoAn_NOSQL
         public User userActive { get; set; }
         ConnectNeo4j neo4J = new ConnectNeo4j();
         public Post Post { get; set; }
+        public int user_action { get; set; }
         public u_Post()
         {
             InitializeComponent();
+            user_action = 0;
             btnLike.Click += BtnLike_Click;
             btnBinhLuan.Click += BtnBinhLuan_Click;
         }
+       
 
         public event EventHandler EventBinhLuan;
         private async void BtnBinhLuan_Click(object sender, EventArgs e)
@@ -31,8 +34,11 @@ namespace DoAn_NOSQL
                 if(flag)
                 {
                     MessageBox.Show("Đã bình luận");
-
-                    return;
+                    user_action = 1;
+                    if (EventBinhLuan != null)
+                    {
+                        EventBinhLuan.Invoke(this, EventArgs.Empty);
+                    }
                 }
             }
         }
@@ -41,6 +47,16 @@ namespace DoAn_NOSQL
         {
             userActive = user;
             Post = post;
+            if(post.isLike)
+            {
+                isLiked =false;
+                btnLike.BackgroundImage = Properties.Resources._4926585;
+            }
+            else
+            {
+                btnLike.BackgroundImage = Properties.Resources.unlike;
+                isLiked = true;
+            }
             lblNoiDungBaiDang.Text = post.content;
             lblName.Text = user.name;
             lblNgayDang.Text = post.created_at;
@@ -51,27 +67,48 @@ namespace DoAn_NOSQL
                 u_comment u = new u_comment() {
                     Width = this.panel_binhluan.Width - 10
                 };
-
+                u.EventXoaBinhLuan += U_EventXoaBinhLuan;
                 u.PaintData(item);
                 this.panel_binhluan.Controls.Add(u);
             }
         }
 
-        private void BtnLike_Click(object sender, EventArgs e)
+        private void U_EventXoaBinhLuan(object sender, EventArgs e)
         {
-            isLiked = !isLiked; // Toggle the like status
+            u_comment u_ = (u_comment)sender;
+            if(u_.someChange==1)
+            {
+                user_action = 1;
+                if (EventBinhLuan != null)
+                {
+                    EventBinhLuan.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+        public event EventHandler EventLike;
+        private async void BtnLike_Click(object sender, EventArgs e)
+        {         
+            isLiked = !isLiked; 
             Button btn = sender as Button;
-
             if (isLiked)
             {
                 btn.BackgroundImage = Properties.Resources.unlike;
-
+                bool flag =  await neo4J.DeleteRelationshipLike(userActive.user_id, Post.post_id);
+                if(flag)
+                {
+                    user_action = 1;
+                }
             }
             else
             {
                 btn.BackgroundImage = Properties.Resources._4926585;
-
+                bool flag = await neo4J.CreateRelationshipLike(userActive.user_id, Post.post_id);
+                if(flag)
+                {
+                    user_action = 1;
+                }
             }
+            EventLike.Invoke(this, EventArgs.Empty);
             btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
         }
