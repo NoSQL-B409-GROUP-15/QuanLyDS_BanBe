@@ -36,7 +36,6 @@ namespace DoAn_NOSQL
             this.dataIsNotFriend = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.dataRevciedFriendRequest = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comment1 = new DoAn_NOSQL.u_Post();
             this.tabControl1.SuspendLayout();
             this.listFriend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFriend)).BeginInit();
@@ -111,7 +110,7 @@ namespace DoAn_NOSQL
             this.dataRevciedFriendRequest.Name = "dataRevciedFriendRequest";
             this.dataRevciedFriendRequest.RowHeadersWidth = 62;
             this.dataRevciedFriendRequest.RowTemplate.Height = 28;
-            this.dataRevciedFriendRequest.Size = new System.Drawing.Size(606, 419);
+            this.dataRevciedFriendRequest.Size = new System.Drawing.Size(716, 419);
             this.dataRevciedFriendRequest.TabIndex = 0;
             // 
             // groupBox1
@@ -119,24 +118,16 @@ namespace DoAn_NOSQL
             this.groupBox1.Controls.Add(this.dataRevciedFriendRequest);
             this.groupBox1.Location = new System.Drawing.Point(68, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(612, 444);
+            this.groupBox1.Size = new System.Drawing.Size(722, 444);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lời mời bạn kết";
-            // 
-            // comment1
-            // 
-            this.comment1.Location = new System.Drawing.Point(96, 478);
-            this.comment1.Name = "comment1";
-            this.comment1.Size = new System.Drawing.Size(532, 176);
-            this.comment1.TabIndex = 2;
             // 
             // Form_DsBanBe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1449, 666);
-            this.Controls.Add(this.comment1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form_DsBanBe";
@@ -161,6 +152,5 @@ namespace DoAn_NOSQL
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataIsNotFriend;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataRevciedFriendRequest;
         private System.Windows.Forms.GroupBox groupBox1;
-        private u_Post comment1;
     }
 }

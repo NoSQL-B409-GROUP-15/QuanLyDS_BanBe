@@ -39,6 +39,8 @@ namespace DoAn_NOSQL
             this.btnBinhLuan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_binhluan = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSoLikes = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblSoBinhLuan = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +71,7 @@ namespace DoAn_NOSQL
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(223, 163);
+            this.kryptonLabel3.Location = new System.Drawing.Point(368, 162);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(89, 29);
             this.kryptonLabel3.TabIndex = 5;
@@ -126,14 +128,32 @@ namespace DoAn_NOSQL
             this.panel_binhluan.AutoScroll = true;
             this.panel_binhluan.Location = new System.Drawing.Point(22, 198);
             this.panel_binhluan.Name = "panel_binhluan";
-            this.panel_binhluan.Size = new System.Drawing.Size(1117, 224);
+            this.panel_binhluan.Size = new System.Drawing.Size(1117, 235);
             this.panel_binhluan.TabIndex = 10;
+            // 
+            // lblSoLikes
+            // 
+            this.lblSoLikes.Location = new System.Drawing.Point(209, 163);
+            this.lblSoLikes.Name = "lblSoLikes";
+            this.lblSoLikes.Size = new System.Drawing.Size(129, 29);
+            this.lblSoLikes.TabIndex = 11;
+            this.lblSoLikes.Values.Text = "kryptonLabel1";
+            // 
+            // lblSoBinhLuan
+            // 
+            this.lblSoBinhLuan.Location = new System.Drawing.Point(463, 162);
+            this.lblSoBinhLuan.Name = "lblSoBinhLuan";
+            this.lblSoBinhLuan.Size = new System.Drawing.Size(22, 29);
+            this.lblSoBinhLuan.TabIndex = 12;
+            this.lblSoBinhLuan.Values.Text = "0";
             // 
             // u_Post
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.lblSoBinhLuan);
+            this.Controls.Add(this.lblSoLikes);
             this.Controls.Add(this.panel_binhluan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBinhLuan);
@@ -144,7 +164,7 @@ namespace DoAn_NOSQL
             this.Controls.Add(this.btnLike);
             this.Controls.Add(this.lblNgayDang);
             this.Name = "u_Post";
-            this.Size = new System.Drawing.Size(1154, 495);
+            this.Size = new System.Drawing.Size(1154, 491);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -164,5 +184,7 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.Button btnBinhLuan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel panel_binhluan;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSoLikes;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSoBinhLuan;
     }
 }

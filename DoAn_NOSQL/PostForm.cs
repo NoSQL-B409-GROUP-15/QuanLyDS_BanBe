@@ -56,7 +56,7 @@ namespace DoAn_NOSQL
             foreach (var item in taskListPost)
             {
                 u_Post u_Post = new u_Post();
-                u_Post.PaintData(item);
+                u_Post.PaintData(item,userActive);
                 this.listPost.Controls.Add(u_Post);
             }
         }

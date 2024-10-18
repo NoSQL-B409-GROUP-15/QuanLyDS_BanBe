@@ -19,6 +19,8 @@ namespace DoAn_NOSQL
                 created_at = userNode.Properties["created_at"].As<string>(),
                 mail = userNode.Properties["mail"].As<string>(),
                 name = userNode.Properties["name"].As<string>(),
+                image = userNode.Properties["image"].As<string>(),
+                numberPhone = userNode.Properties["phoneNumber"].As<string>(),
                 password = userNode.Properties["password"].As<string>()
             };
         }

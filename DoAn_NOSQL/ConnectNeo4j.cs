@@ -305,9 +305,10 @@ namespace DoAn_NOSQL
             using (var session = _driver.AsyncSession())
             {
                 var result = await session.RunAsync("MATCH (u:USER{user_id:$id})-[:POSTED]-(p:POST) " +
+                   "OPTIONAL MATCH (p)-[:Likes]-(l:USER)"+
                     "OPTIONAL MATCH(p) -[:HAS_COMMENT]-(c: COMMENT) " +
                     "OPTIONAL MATCH(c)-[:COMMENTED] - (commenter: USER) " +
-                    "RETURN p, c, commenter ", new { id });
+                    "RETURN p, c,count(l) as numberLike, commenter ", new { id });
 
                 var posts = new List<Post>();
 
@@ -315,7 +316,8 @@ namespace DoAn_NOSQL
                 {
                     var postNode = result.Current["p"].As<INode>();
                     var postId = postNode.Properties["post_id"].As<int>();
-
+                    var countLike = result.Current["numberLike"].As<int>();
+                    
                     var post = posts.FirstOrDefault(p => p.post_id == postId);
 
                     if (post == null)
@@ -328,6 +330,7 @@ namespace DoAn_NOSQL
                                             .ToString("yyyy-MM-dd HH:mm:ss"),
                             Comments = new List<Comment>()
                         };
+                        post.countLikes = countLike;
                         posts.Add(post);
                     }
 
@@ -356,6 +359,49 @@ namespace DoAn_NOSQL
             }
         }
 
+        public async Task<bool> CreateCommentPost(int userId, int post_id, string content)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                int comment_id = await GetCommentIDNext() + 1;
+                try
+                {
+                    var result = await session.RunAsync(
+                        "MATCH (u:USER {user_id: $userId}) " +
+                        "MATCH (p:POST {post_id: $post_id}) " +
+                        "CREATE (c:COMMENT {comment_id: $comment_id, content: $content, created_at: timestamp()}) " +
+                        "MERGE (u)-[:COMMENTED]->(c) " +
+                        "MERGE (p)-[:HAS_COMMENT]->(c) " +
+                        "RETURN u, p, c",
+                        new
+                        {
+                            userId,
+                            post_id,
+                            content,
+                            comment_id, 
+                
+                        });
+
+                    return result != null;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error while creating comment: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+
+        public async Task<int> GetCommentIDNext()
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("MATCH(N:COMMENT) RETURN COUNT(N)");
+                var records = await result.ToListAsync();
+                return records.Count;
+            }
+        }
     }
 
 }

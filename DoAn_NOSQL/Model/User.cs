@@ -17,6 +17,8 @@ namespace DoAn_NOSQL.Model
         public string password { get; set; }
         public string created_at { get; set; }
         public string mail { get; set; }
+        public string numberPhone { get; set; }
+        public string image { get; set; }
         public bool HasSendingRequest { get; set; }
         public int mutualFriend { get; set; }
     }

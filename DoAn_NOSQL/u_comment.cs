@@ -20,6 +20,8 @@ namespace DoAn_NOSQL
         {
             lblNoiDungComment.Text = comment.content;
             lblNguoiCmt.Text = comment.commenter.name;
+            lblThoiGianComment.Text = DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(comment.created_at))
+                                            .ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void u_comment_Load(object sender, EventArgs e)
         {
