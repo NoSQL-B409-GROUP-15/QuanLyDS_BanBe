@@ -32,10 +32,15 @@ namespace DoAn_NOSQL
         }
         private void DataRevciedFriendRequest_MouseDown(object sender, MouseEventArgs e)
         {
+       
+            if (dataRevciedFriendRequest.Rows.Count <= 0)
+            {
+                return; 
+            }
+
             if (e.Button == MouseButtons.Right)
             {
                 var hitTestInfo = dataRevciedFriendRequest.HitTest(e.X, e.Y);
-
                 if (hitTestInfo.RowIndex >= 0)
                 {
                     dataRevciedFriendRequest.ClearSelection();
@@ -45,17 +50,15 @@ namespace DoAn_NOSQL
                         DataSelected = int.Parse(dataRevciedFriendRequest.Rows[hitTestInfo.RowIndex].Cells[0].Value.ToString());
                         Point mousePosition = dataRevciedFriendRequest.PointToClient(MousePosition);
                         cmsView.Show(dataRevciedFriendRequest, mousePosition);
-
                     }
-                    catch (Exception)
+                    catch
                     {
-
-                       
+                        return;
                     }
-                 
                 }
             }
         }
+
 
         private void DataIsNotFriend_MouseDown(object sender, MouseEventArgs e)
         {
@@ -232,7 +235,7 @@ namespace DoAn_NOSQL
             dataGridView.Columns.Clear();
             dataGridView.RowHeadersVisible = false;
             dataGridView.ReadOnly = true;
-
+            dataGridView.AllowUserToAddRows = false;
             dataGridView.Columns.Add("User ID", "User ID");
             dataGridView.Columns.Add("Name", "Tên");
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
@@ -248,7 +251,7 @@ namespace DoAn_NOSQL
             dataGridView.ReadOnly = true;
             dataGridView.Columns.Add("User ID", "User ID");
             dataGridView.Columns.Add("Name", "Tên");
-
+            dataGridView.AllowUserToAddRows = false;
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
             {
                 HeaderText = "Thao tác",
@@ -265,6 +268,7 @@ namespace DoAn_NOSQL
             dataGridView.Columns.Add("User ID", "User ID");
             dataGridView.Columns.Add("Name", "Tên");
             dataGridView.Columns.Add("Characteristic", "Số bạn chung");
+            dataGridView.AllowUserToAddRows = false;
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
             {
                 HeaderText = "Thao tác",
@@ -347,5 +351,7 @@ namespace DoAn_NOSQL
             userClick = 1;
             EventClick.Invoke(this, EventArgs.Empty);
         }
+
+
     }
 }

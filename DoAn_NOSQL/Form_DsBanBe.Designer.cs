@@ -53,10 +53,11 @@ namespace DoAn_NOSQL
             // 
             this.tabControl1.Controls.Add(this.listFriend);
             this.tabControl1.Controls.Add(this.listIsNotFriend);
-            this.tabControl1.Location = new System.Drawing.Point(816, 22);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tabControl1.Location = new System.Drawing.Point(852, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(597, 444);
+            this.tabControl1.Size = new System.Drawing.Size(597, 666);
             this.tabControl1.TabIndex = 0;
             // 
             // listFriend
@@ -65,7 +66,7 @@ namespace DoAn_NOSQL
             this.listFriend.Location = new System.Drawing.Point(4, 29);
             this.listFriend.Name = "listFriend";
             this.listFriend.Padding = new System.Windows.Forms.Padding(3);
-            this.listFriend.Size = new System.Drawing.Size(589, 411);
+            this.listFriend.Size = new System.Drawing.Size(589, 633);
             this.listFriend.TabIndex = 0;
             this.listFriend.Text = "Bạn bè";
             this.listFriend.UseVisualStyleBackColor = true;
@@ -80,7 +81,7 @@ namespace DoAn_NOSQL
             this.dataFriend.Name = "dataFriend";
             this.dataFriend.RowHeadersWidth = 62;
             this.dataFriend.RowTemplate.Height = 28;
-            this.dataFriend.Size = new System.Drawing.Size(583, 405);
+            this.dataFriend.Size = new System.Drawing.Size(583, 627);
             this.dataFriend.TabIndex = 0;
             // 
             // listIsNotFriend
@@ -114,15 +115,16 @@ namespace DoAn_NOSQL
             this.dataRevciedFriendRequest.Name = "dataRevciedFriendRequest";
             this.dataRevciedFriendRequest.RowHeadersWidth = 62;
             this.dataRevciedFriendRequest.RowTemplate.Height = 28;
-            this.dataRevciedFriendRequest.Size = new System.Drawing.Size(716, 419);
+            this.dataRevciedFriendRequest.Size = new System.Drawing.Size(740, 641);
             this.dataRevciedFriendRequest.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataRevciedFriendRequest);
-            this.groupBox1.Location = new System.Drawing.Point(68, 22);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(722, 444);
+            this.groupBox1.Size = new System.Drawing.Size(746, 666);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lời mời bạn kết";
@@ -134,12 +136,12 @@ namespace DoAn_NOSQL
             this.cmsView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xemTrangCáNhânToolStripMenuItem});
             this.cmsView.Name = "cmsView";
-            this.cmsView.Size = new System.Drawing.Size(241, 69);
+            this.cmsView.Size = new System.Drawing.Size(234, 36);
             // 
             // xemTrangCáNhânToolStripMenuItem
             // 
             this.xemTrangCáNhânToolStripMenuItem.Name = "xemTrangCáNhânToolStripMenuItem";
-            this.xemTrangCáNhânToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.xemTrangCáNhânToolStripMenuItem.Size = new System.Drawing.Size(233, 32);
             this.xemTrangCáNhânToolStripMenuItem.Text = "Xem trang cá nhân";
             this.xemTrangCáNhânToolStripMenuItem.Click += new System.EventHandler(this.xemTrangCáNhânToolStripMenuItem_Click);
             // 
