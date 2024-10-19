@@ -67,7 +67,20 @@ namespace DoAn_NOSQL
             {
                 ViewProfileUserForm viewShowProfile = new ViewProfileUserForm();
                 viewShowProfile.PaintData(bb.DataSelected, userActive);
+                viewShowProfile.EventClick += ViewShowProfile_EventClick;
                 util.OpenChildForm(viewShowProfile, panelBody); 
+            }
+        }
+
+        private void ViewShowProfile_EventClick(object sender, EventArgs e)
+        {
+            ViewProfileUserForm viewShowProfile = (ViewProfileUserForm)sender;
+            if(viewShowProfile._eventClick==1)
+            {
+                Form_DsBanBe bb = new Form_DsBanBe();
+                bb.userActivce = userActive;
+                bb.EventClick += Bb_EventClick;
+                util.OpenChildForm(bb, panelBody);
             }
         }
 

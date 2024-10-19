@@ -29,15 +29,23 @@ namespace DoAn_NOSQL
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lblNguoiCmt = new System.Windows.Forms.Label();
             this.lblNoiDungComment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnXoaCmt = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lblThoiGianComment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.panel1.SuspendLayout();
+            this.btnXoaCmt = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnXoaCmt);
+            this.panel2.Location = new System.Drawing.Point(857, 6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(64, 29);
+            this.panel2.TabIndex = 4;
             // 
             // lblNguoiCmt
             // 
@@ -65,6 +73,14 @@ namespace DoAn_NOSQL
             this.panel1.Size = new System.Drawing.Size(685, 42);
             this.panel1.TabIndex = 2;
             // 
+            // lblThoiGianComment
+            // 
+            this.lblThoiGianComment.Location = new System.Drawing.Point(195, 4);
+            this.lblThoiGianComment.Name = "lblThoiGianComment";
+            this.lblThoiGianComment.Size = new System.Drawing.Size(129, 29);
+            this.lblThoiGianComment.TabIndex = 5;
+            this.lblThoiGianComment.Values.Text = "kryptonLabel1";
+            // 
             // btnXoaCmt
             // 
             this.btnXoaCmt.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -76,28 +92,11 @@ namespace DoAn_NOSQL
             this.btnXoaCmt.UseVisualStyleBackColor = true;
             this.btnXoaCmt.Click += new System.EventHandler(this.btnXoaCmt_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.btnXoaCmt);
-            this.panel2.Location = new System.Drawing.Point(857, 6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(64, 29);
-            this.panel2.TabIndex = 4;
-            // 
-            // lblThoiGianComment
-            // 
-            this.lblThoiGianComment.Location = new System.Drawing.Point(195, 4);
-            this.lblThoiGianComment.Name = "lblThoiGianComment";
-            this.lblThoiGianComment.Size = new System.Drawing.Size(129, 29);
-            this.lblThoiGianComment.TabIndex = 5;
-            this.lblThoiGianComment.Values.Text = "kryptonLabel1";
-            // 
             // u_comment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblThoiGianComment);
             this.Controls.Add(this.panel2);
@@ -106,21 +105,20 @@ namespace DoAn_NOSQL
             this.Name = "u_comment";
             this.Size = new System.Drawing.Size(924, 108);
             this.Load += new System.EventHandler(this.u_comment_Load);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnXoaCmt;
         private System.Windows.Forms.Label lblNguoiCmt;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblNoiDungComment;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnXoaCmt;
-        private System.Windows.Forms.Panel panel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblThoiGianComment;
     }
 }

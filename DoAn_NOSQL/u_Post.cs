@@ -18,20 +18,20 @@ namespace DoAn_NOSQL
             btnLike.Click += BtnLike_Click;
             btnBinhLuan.Click += BtnBinhLuan_Click;
         }
-       
+
 
         public event EventHandler EventBinhLuan;
         private async void BtnBinhLuan_Click(object sender, EventArgs e)
         {
-            if(txtBinhLuan.Text.Trim().Length==0)
+            if (txtBinhLuan.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn đang bỏ trống nội dung");
                 return;
             }
             else
             {
-                bool flag =await neo4J.CreateCommentPost(userActive.user_id, Post.post_id, txtBinhLuan.Text.Trim());
-                if(flag)
+                bool flag = await neo4J.CreateCommentPost(userActive.user_id, Post.post_id, txtBinhLuan.Text.Trim());
+                if (flag)
                 {
                     MessageBox.Show("Đã bình luận");
                     user_action = 1;
@@ -43,13 +43,13 @@ namespace DoAn_NOSQL
             }
         }
 
-        public void PaintData(Post post,User user)
+        public void PaintData(Post post, User user)
         {
             userActive = user;
             Post = post;
-            if(post.isLike)
+            if (post.isLike)
             {
-                isLiked =false;
+                isLiked = false;
                 btnLike.BackgroundImage = Properties.Resources._4926585;
             }
             else
@@ -64,7 +64,8 @@ namespace DoAn_NOSQL
             lblSoBinhLuan.Text = post.Comments.Count.ToString();
             foreach (var item in post.Comments)
             {
-                u_comment u = new u_comment() {
+                u_comment u = new u_comment()
+                {
                     Width = this.panel_binhluan.Width - 10
                 };
                 u.EventXoaBinhLuan += U_EventXoaBinhLuan;
@@ -72,11 +73,51 @@ namespace DoAn_NOSQL
                 this.panel_binhluan.Controls.Add(u);
             }
         }
+        public void PaintDataViewInfor(Post post, User user)
+        {
+            userActive = user;
+            Post = post;
+            if (post.isLike)
+            {
+                isLiked = false;
+                btnLike.BackgroundImage = Properties.Resources._4926585;
+            }
+            else
+            {
+                btnLike.BackgroundImage = Properties.Resources.unlike;
+                isLiked = true;
+            }
+            lblNoiDungBaiDang.Text = post.content;
+            lblName.Text = user.name;
+            lblNgayDang.Text = post.created_at;
+            lblNumberLike.Text = post.countLikes.ToString();
+            lblSoBinhLuan.Text = post.Comments.Count.ToString();
+            foreach (var item in post.Comments)
+            {
 
+                u_comment u = new u_comment()
+                {
+                    Width = this.panel_binhluan.Width - 10
+                };
+                if (item.commenter.user_id == user.user_id)
+                {
+                    u.EventXoaBinhLuan += U_EventXoaBinhLuan;
+                    u.PaintData(item);
+                 
+                }
+                else
+                {
+                    u.PaintDataViewInfo(item);
+                }
+                this.panel_binhluan.Controls.Add(u);
+
+
+            }
+        }
         private void U_EventXoaBinhLuan(object sender, EventArgs e)
         {
             u_comment u_ = (u_comment)sender;
-            if(u_.someChange==1)
+            if (u_.someChange == 1)
             {
                 user_action = 1;
                 if (EventBinhLuan != null)
@@ -87,14 +128,14 @@ namespace DoAn_NOSQL
         }
         public event EventHandler EventLike;
         private async void BtnLike_Click(object sender, EventArgs e)
-        {         
-            isLiked = !isLiked; 
+        {
+            isLiked = !isLiked;
             Button btn = sender as Button;
             if (isLiked)
             {
                 btn.BackgroundImage = Properties.Resources.unlike;
-                bool flag =  await neo4J.DeleteRelationshipLike(userActive.user_id, Post.post_id);
-                if(flag)
+                bool flag = await neo4J.DeleteRelationshipLike(userActive.user_id, Post.post_id);
+                if (flag)
                 {
                     user_action = 1;
                 }
@@ -103,7 +144,7 @@ namespace DoAn_NOSQL
             {
                 btn.BackgroundImage = Properties.Resources._4926585;
                 bool flag = await neo4J.CreateRelationshipLike(userActive.user_id, Post.post_id);
-                if(flag)
+                if (flag)
                 {
                     user_action = 1;
                 }

@@ -183,7 +183,7 @@ namespace DoAn_NOSQL
                 try
                 {
                     var result = await session.RunAsync(
-                        "MATCH (u:USER {user_id: $senderId})-[:SENT_REQUEST]->(f:FRIENDREQUEST {to_user_id: $receiverId}) " +
+                        "MATCH (u:USER {user_id: $senderId})-[:SENT_REQUEST]-(f:FRIENDREQUEST {to_user_id: $receiverId}) " +
                         "DETACH DELETE f " +
                         "RETURN COUNT(*) AS count",
                         new { senderId, receiverId });
@@ -495,7 +495,7 @@ namespace DoAn_NOSQL
 
         public async Task<List<User>> ListMutalFriend(int userID1, int userID2)
         {
-           using(var session = _driver.AsyncSession())
+            using (var session = _driver.AsyncSession())
             {
                 var result = await session.RunAsync("MATCH (u1:USER {user_id: $userID1})-[:IS_FRIEND_WITH]-(mutualFriend:USER)-[:IS_FRIEND_WITH]-(u2:USER {user_id: $userID2}) RETURN mutualFriend", new { userID1, userID2 });
                 var users = new List<User>();
@@ -523,6 +523,37 @@ namespace DoAn_NOSQL
                     return mapping.MapUser(userNode);
                 }
                 return null;
+            }
+        }
+
+        public async Task<bool> IsFriend(int infoId, int userId)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("MATCH (N:USER{user_id:$infoId})-[:IS_FRIEND_WITH]-(R:USER{user_id:$userId}) " +
+                    " return count(*) as f",
+                    new { infoId, userId });
+
+                if (await result.FetchAsync())
+                {
+                    return result.Current["f"].As<int>() > 0;
+                }
+                return false;
+            }
+        }
+        /// <summary>
+        /// kiểm tra xem tớ có gửi lời mời kết bạn tới bạn chưa ?
+        /// </summary>
+        public async Task<bool> IsSentRequestFriend(int userId, int infoId)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("MATCH (FR:FRIENDREQUEST{from_user_id: $userId,to_user_id:$infoId}) return count(*) as has", new { userId, infoId });
+                if (await result.FetchAsync())
+                {
+                    return result.Current["has"].As<int>()>0;
+               }
+                return false; 
             }
         }
     }

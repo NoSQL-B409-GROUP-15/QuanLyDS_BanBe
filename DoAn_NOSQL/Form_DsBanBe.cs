@@ -40,9 +40,18 @@ namespace DoAn_NOSQL
                 {
                     dataRevciedFriendRequest.ClearSelection();
                     dataRevciedFriendRequest.Rows[hitTestInfo.RowIndex].Selected = true;
-                    DataSelected = int.Parse(dataRevciedFriendRequest.Rows[hitTestInfo.RowIndex].Cells[0].Value.ToString());
-                    Point mousePosition = dataRevciedFriendRequest.PointToClient(MousePosition);
-                    cmsView.Show(dataRevciedFriendRequest, mousePosition);
+                    try
+                    {
+                        DataSelected = int.Parse(dataRevciedFriendRequest.Rows[hitTestInfo.RowIndex].Cells[0].Value.ToString());
+                        Point mousePosition = dataRevciedFriendRequest.PointToClient(MousePosition);
+                        cmsView.Show(dataRevciedFriendRequest, mousePosition);
+
+                    }
+                    catch (Exception)
+                    {
+
+                       
+                    }
                  
                 }
             }
@@ -183,7 +192,6 @@ namespace DoAn_NOSQL
                 if (userIdValue != null && userIdValue != DBNull.Value)
                 {
                     int userId = Convert.ToInt32(userIdValue);
-
                     bool result = await neo4J.DeleteRelationshipFriend(userActivce.user_id, userId);
                     if (result)
                     {

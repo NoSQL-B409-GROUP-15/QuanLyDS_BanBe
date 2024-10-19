@@ -27,7 +27,15 @@ namespace DoAn_NOSQL
             lblThoiGianComment.Text = DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(comment.created_at))
                                             .ToString("yyyy-MM-dd HH:mm:ss");
         }
-
+        public void PaintDataViewInfo(Comment comment)
+        {
+            Comment = comment;
+            lblNoiDungComment.Text = comment.content;
+            lblNguoiCmt.Text = comment.commenter.name;
+            lblThoiGianComment.Text = DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(comment.created_at))
+                                            .ToString("yyyy-MM-dd HH:mm:ss");
+            btnXoaCmt.Visible = false;
+        }
         private void u_comment_Load(object sender, EventArgs e)
         {
 
