@@ -197,7 +197,7 @@ namespace DoAn_NOSQL
                 }
                 catch (Exception ex)
                 {
-
+                
                     return false;
                 }
             }
@@ -231,6 +231,28 @@ namespace DoAn_NOSQL
                     var userNode = record["u2"].As<INode>();
                     var user = mapping.MapUser(userNode);
                     user.mutualFriend = record["mutualFriend"].As<int>();
+                    users.Add(user);
+
+                }
+
+                return users;
+            }
+        }
+
+        public async Task<List<User>> ListFriendSentRequest(int id)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync("MATCH (fr:FRIENDREQUEST {from_user_id:3})" +
+                    " MATCH(fr) -[:RECEIVED_REQUEST]-(u2: USER) RETURN u2", new { id });
+                var records = await result.ToListAsync();
+                var users = new List<User>();
+
+                foreach (var record in records)
+                {
+                    var userNode = record["u2"].As<INode>();
+                    var user = mapping.MapUser(userNode);
+             
                     users.Add(user);
 
                 }

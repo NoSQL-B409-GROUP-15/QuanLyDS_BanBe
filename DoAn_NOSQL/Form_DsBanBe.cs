@@ -28,8 +28,62 @@ namespace DoAn_NOSQL
             dataIsNotFriend.MouseDown += DataIsNotFriend_MouseDown;
             dataRevciedFriendRequest.CellContentClick += DataRevciedFriendRequest_CellContentClick;
             dataRevciedFriendRequest.MouseDown += DataRevciedFriendRequest_MouseDown;
-          
+
+            dataSentRequest.CellContentClick += DataSentRequest_CellContentClick;
+            dataSentRequest.MouseDown += DataSentRequest_MouseDown;
         }
+
+        private void DataSentRequest_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (dataSentRequest.Rows.Count <= 0)
+            {
+                return;
+            }
+
+            if (e.Button == MouseButtons.Right)
+            {
+                var hitTestInfo = dataSentRequest.HitTest(e.X, e.Y);
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dataSentRequest.ClearSelection();
+                    dataSentRequest.Rows[hitTestInfo.RowIndex].Selected = true;
+                    try
+                    {
+                        DataSelected = int.Parse(dataSentRequest.Rows[hitTestInfo.RowIndex].Cells[0].Value.ToString());
+                        Point mousePosition = dataSentRequest.PointToClient(MousePosition);
+                        cmsView.Show(dataSentRequest, mousePosition);
+                    }
+                    catch
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+
+        private  async void DataSentRequest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2 && e.RowIndex >= 0)
+            {
+                var userIdValue = dataSentRequest.Rows[e.RowIndex].Cells[0].Value;
+                if (userIdValue != null && userIdValue != DBNull.Value)
+                {
+                    int userId = Convert.ToInt32(userIdValue);
+
+                    bool flag = await neo4J.CancelFriendRequest( userActivce.user_id,userId);
+                    if (flag)
+                    {
+                        MessageBox.Show("Đã gỡ lời mời kết bạn");
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi");
+                    }
+                }
+            }
+        }
+
         private void DataRevciedFriendRequest_MouseDown(object sender, MouseEventArgs e)
         {
        
@@ -221,13 +275,20 @@ namespace DoAn_NOSQL
 
                 List<User> receivedRequestList = await neo4J.ListFriendRequestRecived(userActivce.user_id);
                 PopulateDataGridViewReceivedRequest(receivedRequestList);
+
+                List<User> sentRequestList = await neo4J.ListFriendSentRequest(userActivce.user_id);
+                PopulateDataGridViewSentRequest(sentRequestList);
             }
         }
+
+        
+
         private void Form_DsBanBe_Load(object sender, EventArgs e)
         {
             SetupDataGridViewFriend(dataFriend);
             SetUpDataGridViewIsNotFriend(dataIsNotFriend);
             SetUpDataGridViewReceivedRequest(dataRevciedFriendRequest);
+            SetUpDataGridViewSentRequest(dataSentRequest);
             LoadData();
         }
         private void SetupDataGridViewFriend(DataGridView dataGridView)
@@ -286,6 +347,24 @@ namespace DoAn_NOSQL
             dataGridView.Columns.Add(buttonColumn);
             dataGridView.Columns.Add(buttonColumn2);
         }
+
+        private void SetUpDataGridViewSentRequest(DataGridView dataGridView)
+        {
+            dataGridView.Columns.Clear();
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.ReadOnly = true;
+            dataGridView.Columns.Add("User ID", "User ID");
+            dataGridView.Columns.Add("Name", "Tên");
+            dataGridView.AllowUserToAddRows = false;
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
+            {
+                HeaderText = "Thao tác",
+                Name = "Action1",
+                Text = "Gỡ lời mời kết bạn",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridView.Columns.Add(buttonColumn);
+        }
         private void PopulateDataGridViewIsNotFriend(List<User> users)
         {
             try
@@ -293,7 +372,7 @@ namespace DoAn_NOSQL
                 dataIsNotFriend.Rows.Clear();
                 foreach (var user in users)
                 {
-                    string action = user.HasSendingRequest ? "Hủy lời mời kết bạn" : "Kết bạn";
+                    string action = user.HasSendingRequest ? "Gỡ lời mời kết bạn" : "Kết bạn";
                     dataIsNotFriend.Rows.Add(user.user_id, user.username, action);
                 }
             }
@@ -319,6 +398,31 @@ namespace DoAn_NOSQL
 
             }
 
+        }
+
+        private void PopulateDataGridViewSentRequest(List<User> sentRequestList)
+        {
+            try
+            {
+                dataSentRequest.Rows.Clear();
+                if (sentRequestList.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+
+                    foreach (var item in sentRequestList)
+                    {
+                        dataSentRequest.Rows.Add(item.user_id, item.username);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("đợi tí");
+            }
         }
         private void PopulateDataGridViewReceivedRequest(List<User> users)
         {

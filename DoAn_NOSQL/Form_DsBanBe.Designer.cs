@@ -35,18 +35,24 @@ namespace DoAn_NOSQL
             this.dataFriend = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.listIsNotFriend = new System.Windows.Forms.TabPage();
             this.dataIsNotFriend = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.dataRevciedFriendRequest = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmsView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xemTrangCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataRevciedFriendRequest = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dataSentRequest = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.tabControl1.SuspendLayout();
             this.listFriend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFriend)).BeginInit();
             this.listIsNotFriend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataIsNotFriend)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataRevciedFriendRequest)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.cmsView.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRevciedFriendRequest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSentRequest)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -107,28 +113,6 @@ namespace DoAn_NOSQL
             this.dataIsNotFriend.Size = new System.Drawing.Size(583, 405);
             this.dataIsNotFriend.TabIndex = 1;
             // 
-            // dataRevciedFriendRequest
-            // 
-            this.dataRevciedFriendRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataRevciedFriendRequest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataRevciedFriendRequest.Location = new System.Drawing.Point(3, 22);
-            this.dataRevciedFriendRequest.Name = "dataRevciedFriendRequest";
-            this.dataRevciedFriendRequest.RowHeadersWidth = 62;
-            this.dataRevciedFriendRequest.RowTemplate.Height = 28;
-            this.dataRevciedFriendRequest.Size = new System.Drawing.Size(740, 641);
-            this.dataRevciedFriendRequest.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataRevciedFriendRequest);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 666);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lời mời bạn kết";
-            // 
             // cmsView
             // 
             this.cmsView.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -145,12 +129,68 @@ namespace DoAn_NOSQL
             this.xemTrangCáNhânToolStripMenuItem.Text = "Xem trang cá nhân";
             this.xemTrangCáNhânToolStripMenuItem.Click += new System.EventHandler(this.xemTrangCáNhânToolStripMenuItem_Click);
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(748, 666);
+            this.tabControl2.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataRevciedFriendRequest);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(740, 633);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Lời mời kết bạn";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataSentRequest);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(740, 633);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Lời mời đã gửi";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataRevciedFriendRequest
+            // 
+            this.dataRevciedFriendRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataRevciedFriendRequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataRevciedFriendRequest.Location = new System.Drawing.Point(3, 3);
+            this.dataRevciedFriendRequest.Name = "dataRevciedFriendRequest";
+            this.dataRevciedFriendRequest.RowHeadersWidth = 62;
+            this.dataRevciedFriendRequest.RowTemplate.Height = 28;
+            this.dataRevciedFriendRequest.Size = new System.Drawing.Size(734, 627);
+            this.dataRevciedFriendRequest.TabIndex = 1;
+            // 
+            // dataSentRequest
+            // 
+            this.dataSentRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataSentRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSentRequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataSentRequest.Location = new System.Drawing.Point(3, 3);
+            this.dataSentRequest.Name = "dataSentRequest";
+            this.dataSentRequest.RowHeadersWidth = 62;
+            this.dataSentRequest.RowTemplate.Height = 28;
+            this.dataSentRequest.Size = new System.Drawing.Size(734, 627);
+            this.dataSentRequest.TabIndex = 2;
+            // 
             // Form_DsBanBe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1449, 666);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form_DsBanBe";
             this.Text = "Form_DsBanBe";
@@ -159,9 +199,12 @@ namespace DoAn_NOSQL
             ((System.ComponentModel.ISupportInitialize)(this.dataFriend)).EndInit();
             this.listIsNotFriend.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataIsNotFriend)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataRevciedFriendRequest)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.cmsView.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataRevciedFriendRequest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSentRequest)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,9 +216,12 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.TabPage listIsNotFriend;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataFriend;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataIsNotFriend;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataRevciedFriendRequest;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ContextMenuStrip cmsView;
         private System.Windows.Forms.ToolStripMenuItem xemTrangCáNhânToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataRevciedFriendRequest;
+        private System.Windows.Forms.TabPage tabPage2;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataSentRequest;
     }
 }
