@@ -43,6 +43,7 @@ namespace DoAn_NOSQL
             this.txtBinhLuan = new System.Windows.Forms.RichTextBox();
             this.btnBinhLuan = new System.Windows.Forms.Button();
             this.panel_binhluan = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnXoaBai = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -54,6 +55,7 @@ namespace DoAn_NOSQL
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnXoaBai);
             this.panel1.Controls.Add(this.panel_binhluan);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblSoBinhLuan);
@@ -68,7 +70,7 @@ namespace DoAn_NOSQL
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(1199, 376);
+            this.panel1.Size = new System.Drawing.Size(1202, 376);
             this.panel1.TabIndex = 0;
             // 
             // lblNoiDungBaiDang
@@ -156,7 +158,7 @@ namespace DoAn_NOSQL
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(5, 317);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1187, 52);
+            this.panel3.Size = new System.Drawing.Size(1190, 52);
             this.panel3.TabIndex = 24;
             // 
             // txtBinhLuan
@@ -171,7 +173,7 @@ namespace DoAn_NOSQL
             // 
             this.btnBinhLuan.Location = new System.Drawing.Point(1020, 6);
             this.btnBinhLuan.Name = "btnBinhLuan";
-            this.btnBinhLuan.Size = new System.Drawing.Size(107, 34);
+            this.btnBinhLuan.Size = new System.Drawing.Size(107, 41);
             this.btnBinhLuan.TabIndex = 20;
             this.btnBinhLuan.Text = "Bình luận";
             this.btnBinhLuan.UseVisualStyleBackColor = true;
@@ -185,6 +187,15 @@ namespace DoAn_NOSQL
             this.panel_binhluan.Size = new System.Drawing.Size(1163, 100);
             this.panel_binhluan.TabIndex = 25;
             // 
+            // btnXoaBai
+            // 
+            this.btnXoaBai.Location = new System.Drawing.Point(1107, 8);
+            this.btnXoaBai.Name = "btnXoaBai";
+            this.btnXoaBai.Size = new System.Drawing.Size(85, 37);
+            this.btnXoaBai.TabIndex = 26;
+            this.btnXoaBai.Values.Text = "Xóa bài";
+            this.btnXoaBai.Visible = false;
+            // 
             // u_Post
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -194,7 +205,7 @@ namespace DoAn_NOSQL
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "u_Post";
-            this.Size = new System.Drawing.Size(1207, 384);
+            this.Size = new System.Drawing.Size(1210, 384);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -221,5 +232,6 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.RichTextBox txtBinhLuan;
         private System.Windows.Forms.Button btnBinhLuan;
         private System.Windows.Forms.FlowLayoutPanel panel_binhluan;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnXoaBai;
     }
 }

@@ -556,6 +556,15 @@ namespace DoAn_NOSQL
                 return false; 
             }
         }
+
+        public async Task<bool> DeletePost(int post_id)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                var result = await session.RunAsync(" MATCH (p:POST {post_id: $post_id})-[:HAS_COMMENT]-(r:COMMENT) DETACH DELETE r, p", new {  post_id});
+                    return result.ConsumeAsync().Result.Counters.RelationshipsDeleted > 0;
+            }
+        }
     }
 
 }

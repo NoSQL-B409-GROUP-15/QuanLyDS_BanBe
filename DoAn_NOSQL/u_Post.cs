@@ -17,10 +17,29 @@ namespace DoAn_NOSQL
             user_action = 0;
             btnLike.Click += BtnLike_Click;
             btnBinhLuan.Click += BtnBinhLuan_Click;
+            btnXoaBai.Click += BtnXoaBai_Click;
         }
 
+        private async void BtnXoaBai_Click(object sender, EventArgs e)
+        {
+            bool flag = await neo4J.DeletePost(Post.post_id);
+            if(flag)
+            {
+                MessageBox.Show("Xóa thành công");
+                user_action = 1;
+                if (EventClick != null)
+                {
+                    EventClick.Invoke(this, EventArgs.Empty);
+                }
+            
+            }
+            else
+            {
+                MessageBox.Show("Lỗi");
+            }
+        }
 
-        public event EventHandler EventBinhLuan;
+        public event EventHandler EventClick;
         private async void BtnBinhLuan_Click(object sender, EventArgs e)
         {
             if (txtBinhLuan.Text.Trim().Length == 0)
@@ -35,9 +54,9 @@ namespace DoAn_NOSQL
                 {
                     MessageBox.Show("Đã bình luận");
                     user_action = 1;
-                    if (EventBinhLuan != null)
+                    if (EventClick != null)
                     {
-                        EventBinhLuan.Invoke(this, EventArgs.Empty);
+                        EventClick.Invoke(this, EventArgs.Empty);
                     }
                 }
             }
@@ -47,6 +66,7 @@ namespace DoAn_NOSQL
         {
             userActive = user;
             Post = post;
+
             if (post.isLike)
             {
                 isLiked = false;
@@ -57,6 +77,7 @@ namespace DoAn_NOSQL
                 btnLike.BackgroundImage = Properties.Resources.unlike;
                 isLiked = true;
             }
+            btnXoaBai.Visible = true;
             lblNoiDungBaiDang.Text = post.content;
             lblName.Text = user.name;
             lblNgayDang.Text = post.created_at;
@@ -87,6 +108,7 @@ namespace DoAn_NOSQL
                 btnLike.BackgroundImage = Properties.Resources.unlike;
                 isLiked = true;
             }
+            btnXoaBai.Visible = false;
             lblNoiDungBaiDang.Text = post.content;
             lblName.Text = user.name;
             lblNgayDang.Text = post.created_at;
@@ -120,13 +142,12 @@ namespace DoAn_NOSQL
             if (u_.someChange == 1)
             {
                 user_action = 1;
-                if (EventBinhLuan != null)
+                if (EventClick != null)
                 {
-                    EventBinhLuan.Invoke(this, EventArgs.Empty);
+                    EventClick.Invoke(this, EventArgs.Empty);
                 }
             }
         }
-        public event EventHandler EventLike;
         private async void BtnLike_Click(object sender, EventArgs e)
         {
             isLiked = !isLiked;
@@ -149,7 +170,7 @@ namespace DoAn_NOSQL
                     user_action = 1;
                 }
             }
-            EventLike.Invoke(this, EventArgs.Empty);
+            EventClick.Invoke(this, EventArgs.Empty);
             btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
         }

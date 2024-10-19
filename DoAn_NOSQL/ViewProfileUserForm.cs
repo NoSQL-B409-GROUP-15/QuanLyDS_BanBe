@@ -145,8 +145,7 @@ namespace DoAn_NOSQL
                 {
 
                 };
-                u_Post.EventBinhLuan += U_Post_EventBinhLuan; ;
-                u_Post.EventLike += U_Post_EventLike; ;
+                u_Post.EventClick += U_Post_EventClick;
                 u_Post.PaintDataViewInfor(item, userActive);
                 this.listPost.Controls.Add(u_Post);
             }
@@ -193,16 +192,12 @@ namespace DoAn_NOSQL
             }
         }
 
-        private void U_Post_EventLike(object sender, EventArgs e)
+        private void U_Post_EventClick(object sender, EventArgs e)
         {
             PaintData(InfoUser.user_id, UserActive);
         }
 
-        private void U_Post_EventBinhLuan(object sender, EventArgs e)
-        {
-            PaintData(InfoUser.user_id, UserActive);
-        }
-
+     
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 

@@ -63,8 +63,8 @@ namespace DoAn_NOSQL
                     item.isLike = true;              
                 }
                 u_Post u_Post = new u_Post();
-                u_Post.EventBinhLuan += U_Post_EventBinhLuan;
-                u_Post.EventLike += U_Post_EventLike;
+                u_Post.EventClick += U_Post_EventClick;
+     
                 u_Post.PaintData(item, userActive);
 
                 this.listPost.Controls.Add(u_Post);
@@ -72,7 +72,7 @@ namespace DoAn_NOSQL
             }
         }
 
-        private void U_Post_EventLike(object sender, EventArgs e)
+        private void U_Post_EventClick(object sender, EventArgs e)
         {
             u_Post u_ = (u_Post)sender;
             if (u_.user_action == 1)
@@ -81,13 +81,6 @@ namespace DoAn_NOSQL
             }
         }
 
-        private void U_Post_EventBinhLuan(object sender, EventArgs e)
-        {
-            u_Post u_ = (u_Post)sender;
-            if(u_.user_action == 1)
-            {
-                LoadPostData();
-            }
-        }
+   
     }
 }
