@@ -47,5 +47,14 @@ namespace DoAn_NOSQL
             changePass.userActive = userActive;
             changePass.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form_DangNhap form_DangNhap = new Form_DangNhap();
+
+            form_DangNhap.Show();
+            this.Hide();
+            Application.Exit();
+        }
     }
 }
