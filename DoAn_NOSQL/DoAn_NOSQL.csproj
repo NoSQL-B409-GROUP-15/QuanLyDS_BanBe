@@ -219,7 +219,6 @@
   <ItemGroup>
     <None Include="Resources\hehe_nosql.drawio.png" />
     <Content Include="Resources\download.jpg" />
-    <None Include="Resources\download1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

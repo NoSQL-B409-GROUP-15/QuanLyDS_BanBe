@@ -91,11 +91,12 @@ namespace DoAn_NOSQL
             util.OpenChildForm(post, panelBody);
         }
 
-        //private void btn_order_Click(object sender, EventArgs e)
-        //{
-        //    PersonalForm personal = new PersonalForm();
-        //    personal.userActive = userActive;
-        //    util.OpenChildForm(personal, panelBody);
-        //}
+
+        private void btn_order_Click(object sender, EventArgs e)
+        {
+            PersonalForm personal = new PersonalForm();
+            personal.userActive = userActive;
+            util.OpenChildForm(personal, panelBody);
+        }
     }
 }

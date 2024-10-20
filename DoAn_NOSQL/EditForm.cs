@@ -30,7 +30,7 @@ namespace DoAn_NOSQL
         {
             textBTen.Text = userActive.name;
             textBoxMail.Text = userActive.mail;
-            textBoxSDT.Text = userActive.numberPhone;
+            textBoxSDT.Text = userActive.phoneNumber;
         }
 
         private void button1_Click(object sender, EventArgs e)

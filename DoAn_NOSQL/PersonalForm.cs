@@ -26,7 +26,7 @@ namespace DoAn_NOSQL
             User user = await neo4J.GetUserByIdAsync(userActive.user_id);
             lbname.Text = user.name;
             lbGmail.Text = user.mail;
-            lbPhone.Text = user.numberPhone;
+            lbPhone.Text = user.phoneNumber;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -89,7 +89,7 @@ namespace DoAn_NOSQL
             this.btn_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
             this.btn_Menu.Location = new System.Drawing.Point(15, 8);
-            this.btn_Menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Menu.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Menu.Name = "btn_Menu";
             this.btn_Menu.Size = new System.Drawing.Size(17, 18);
             this.btn_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,7 +215,7 @@ namespace DoAn_NOSQL
             this.btn_order.TabIndex = 8;
             this.btn_order.Values.Image = ((System.Drawing.Image)(resources.GetObject("btn_order.Values.Image")));
             this.btn_order.Values.Text = " Trang cá nhân";
-           // this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
+            this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
             // 
             // menuTransition
             // 
@@ -233,7 +233,7 @@ namespace DoAn_NOSQL
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.headerPanel);
             this.Controls.Add(this.sidebar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
