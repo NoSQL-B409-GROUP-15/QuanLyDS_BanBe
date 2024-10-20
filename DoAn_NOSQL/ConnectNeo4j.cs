@@ -431,6 +431,79 @@ namespace DoAn_NOSQL
             }
         }
 
+        public async Task<bool> UpdateUserAsync(int userId, string name, string phone, string newEmail)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                try
+                {
+                    var result = await session.RunAsync(
+                        "MATCH (u:USER {user_id: $userId}) " +
+                        "SET u.name = $name, " +
+                        "    u.phoneNumber = $phone, " +
+                        "    u.mail = $newEmail " +
+                        "RETURN u",
+                        new { userId,name, phone, newEmail });
+
+                    return result != null;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error while updating user: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+        public async Task<bool> CheckPass(int userId, string pass)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                try
+                {
+                    var result = await session.RunAsync(
+                        "MATCH (u:USER{user_id:$userId}) " +
+                        "WHERE u.password = $pass " +
+                        "RETURN u",
+                        new { userId,pass});
+                    var records = await result.ToListAsync();
+
+                    if (records.Count > 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error while updating user: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+        public async Task<bool> ChangePass(int userId, string newpass)
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                try
+                {
+                    var result = await session.RunAsync(
+                        "MATCH (u:USER {user_id: $userId}) " +
+                        "SET u.password = $newpass " +
+                        "RETURN u",
+                        new { userId,newpass});
+                    return result != null;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error while updating user: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+
     }
 
 }

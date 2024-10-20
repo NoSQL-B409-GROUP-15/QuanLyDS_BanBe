@@ -21,7 +21,7 @@ namespace DoAn_NOSQL
                 name = userNode.Properties["name"].As<string>(),
                 image = userNode.Properties["image"].As<string>(),
                 numberPhone = userNode.Properties["phoneNumber"].As<string>(),
-                password = userNode.Properties["password"].As<string>()
+                password = userNode.Properties["password"].As<string>() 
             };
         }
 
