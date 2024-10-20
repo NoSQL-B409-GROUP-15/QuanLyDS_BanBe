@@ -806,7 +806,7 @@ namespace DoAn_NOSQL
             }
         }
 
-        public async Task<bool> CreateUser(string username, string password, string email)
+        public async Task<bool> CreateUser(string username, string password, string email,string name,string phone )
         {
             using (var session = _driver.AsyncSession())
             {
@@ -823,12 +823,16 @@ namespace DoAn_NOSQL
                     }
 
                     // Tạo người dùng mới
+                    int userId;
+                    Random random = new Random();
+                    userId = random.Next(1, 1000000); // Tạo user_id ngẫu nhiên
+                    string image = "Nike-application/401786250_1727402151094177_8906147692508802950_n";
+                    // Tạo người dùng mới
                     var result = await session.RunAsync(
-                        "CREATE (u:USER {username: $username, password: $password, email: $email, created_at: timestamp()}) " +
+                        "CREATE (u:USER {user_id: $userId, username: $username, password: $password, mail: $email, created_at: timestamp(), phoneNumber: $phone, name: $name,image: $image}) " +
                         "RETURN u",
-                        new { username, password, email });
-
-                    return await result.FetchAsync(); // Trả về true nếu tạo thành công
+                        new { userId, username, password, email, phone, name,image });
+                    return await result.FetchAsync();
                 }
                 catch (Exception ex)
                 {

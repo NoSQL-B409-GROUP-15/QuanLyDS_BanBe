@@ -47,5 +47,11 @@ namespace DoAn_NOSQL
                 MessageBox.Show("Sai thông tin đăng nhập bạn ei");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RegisterForm rg = new RegisterForm();
+            rg.Show();
+        }
     }
 }
