@@ -30,23 +30,25 @@ namespace DoAn_NOSQL
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNoiDungBaiDang = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.btnXoaBai = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.panel_binhluan = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtBinhLuan = new System.Windows.Forms.RichTextBox();
+            this.btnBinhLuan = new System.Windows.Forms.Button();
             this.lblSoBinhLuan = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.haha = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblNoiDungBaiDang = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblName = new System.Windows.Forms.Label();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblNumberLike = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnLike = new System.Windows.Forms.Button();
             this.lblNgayDang = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtBinhLuan = new System.Windows.Forms.RichTextBox();
-            this.btnBinhLuan = new System.Windows.Forms.Button();
-            this.panel_binhluan = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnXoaBai = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.pcBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,6 +57,7 @@ namespace DoAn_NOSQL
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pcBox);
             this.panel1.Controls.Add(this.btnXoaBai);
             this.panel1.Controls.Add(this.panel_binhluan);
             this.panel1.Controls.Add(this.panel3);
@@ -73,14 +76,50 @@ namespace DoAn_NOSQL
             this.panel1.Size = new System.Drawing.Size(1202, 376);
             this.panel1.TabIndex = 0;
             // 
-            // lblNoiDungBaiDang
+            // btnXoaBai
             // 
-            this.lblNoiDungBaiDang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNoiDungBaiDang.Location = new System.Drawing.Point(0, 0);
-            this.lblNoiDungBaiDang.Name = "lblNoiDungBaiDang";
-            this.lblNoiDungBaiDang.Size = new System.Drawing.Size(1120, 86);
-            this.lblNoiDungBaiDang.TabIndex = 0;
-            this.lblNoiDungBaiDang.Values.Text = "NỘI DUNG ĐĂNG BÀI";
+            this.btnXoaBai.Location = new System.Drawing.Point(1107, 8);
+            this.btnXoaBai.Name = "btnXoaBai";
+            this.btnXoaBai.Size = new System.Drawing.Size(85, 37);
+            this.btnXoaBai.TabIndex = 26;
+            this.btnXoaBai.Values.Text = "Xóa bài";
+            this.btnXoaBai.Visible = false;
+            // 
+            // panel_binhluan
+            // 
+            this.panel_binhluan.AutoSize = true;
+            this.panel_binhluan.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panel_binhluan.Location = new System.Drawing.Point(26, 203);
+            this.panel_binhluan.Name = "panel_binhluan";
+            this.panel_binhluan.Size = new System.Drawing.Size(1163, 100);
+            this.panel_binhluan.TabIndex = 25;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtBinhLuan);
+            this.panel3.Controls.Add(this.btnBinhLuan);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(5, 317);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1190, 52);
+            this.panel3.TabIndex = 24;
+            // 
+            // txtBinhLuan
+            // 
+            this.txtBinhLuan.Location = new System.Drawing.Point(21, 6);
+            this.txtBinhLuan.Name = "txtBinhLuan";
+            this.txtBinhLuan.Size = new System.Drawing.Size(999, 41);
+            this.txtBinhLuan.TabIndex = 21;
+            this.txtBinhLuan.Text = "";
+            // 
+            // btnBinhLuan
+            // 
+            this.btnBinhLuan.Location = new System.Drawing.Point(1020, 6);
+            this.btnBinhLuan.Name = "btnBinhLuan";
+            this.btnBinhLuan.Size = new System.Drawing.Size(107, 41);
+            this.btnBinhLuan.TabIndex = 20;
+            this.btnBinhLuan.Text = "Bình luận";
+            this.btnBinhLuan.UseVisualStyleBackColor = true;
             // 
             // lblSoBinhLuan
             // 
@@ -106,10 +145,19 @@ namespace DoAn_NOSQL
             this.panel2.Size = new System.Drawing.Size(1120, 86);
             this.panel2.TabIndex = 20;
             // 
+            // lblNoiDungBaiDang
+            // 
+            this.lblNoiDungBaiDang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNoiDungBaiDang.Location = new System.Drawing.Point(0, 0);
+            this.lblNoiDungBaiDang.Name = "lblNoiDungBaiDang";
+            this.lblNoiDungBaiDang.Size = new System.Drawing.Size(1120, 86);
+            this.lblNoiDungBaiDang.TabIndex = 0;
+            this.lblNoiDungBaiDang.Values.Text = "NỘI DUNG ĐĂNG BÀI";
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(22, 17);
+            this.lblName.Location = new System.Drawing.Point(86, 17);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(51, 20);
             this.lblName.TabIndex = 17;
@@ -151,50 +199,15 @@ namespace DoAn_NOSQL
             this.lblNgayDang.TabIndex = 13;
             this.lblNgayDang.Values.Text = "kryptonLabel2";
             // 
-            // panel3
+            // pcBox
             // 
-            this.panel3.Controls.Add(this.txtBinhLuan);
-            this.panel3.Controls.Add(this.btnBinhLuan);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(5, 317);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1190, 52);
-            this.panel3.TabIndex = 24;
-            // 
-            // txtBinhLuan
-            // 
-            this.txtBinhLuan.Location = new System.Drawing.Point(21, 6);
-            this.txtBinhLuan.Name = "txtBinhLuan";
-            this.txtBinhLuan.Size = new System.Drawing.Size(999, 41);
-            this.txtBinhLuan.TabIndex = 21;
-            this.txtBinhLuan.Text = "";
-            // 
-            // btnBinhLuan
-            // 
-            this.btnBinhLuan.Location = new System.Drawing.Point(1020, 6);
-            this.btnBinhLuan.Name = "btnBinhLuan";
-            this.btnBinhLuan.Size = new System.Drawing.Size(107, 41);
-            this.btnBinhLuan.TabIndex = 20;
-            this.btnBinhLuan.Text = "Bình luận";
-            this.btnBinhLuan.UseVisualStyleBackColor = true;
-            // 
-            // panel_binhluan
-            // 
-            this.panel_binhluan.AutoSize = true;
-            this.panel_binhluan.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panel_binhluan.Location = new System.Drawing.Point(26, 203);
-            this.panel_binhluan.Name = "panel_binhluan";
-            this.panel_binhluan.Size = new System.Drawing.Size(1163, 100);
-            this.panel_binhluan.TabIndex = 25;
-            // 
-            // btnXoaBai
-            // 
-            this.btnXoaBai.Location = new System.Drawing.Point(1107, 8);
-            this.btnXoaBai.Name = "btnXoaBai";
-            this.btnXoaBai.Size = new System.Drawing.Size(85, 37);
-            this.btnXoaBai.TabIndex = 26;
-            this.btnXoaBai.Values.Text = "Xóa bài";
-            this.btnXoaBai.Visible = false;
+            this.pcBox.Location = new System.Drawing.Point(26, 8);
+            this.pcBox.Name = "pcBox";
+            this.pcBox.Size = new System.Drawing.Size(53, 34);
+            this.pcBox.TabIndex = 27;
+            this.pcBox.TabStop = false;
+            this.pcBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+
             // 
             // u_Post
             // 
@@ -208,9 +221,10 @@ namespace DoAn_NOSQL
             this.Size = new System.Drawing.Size(1210, 384);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +247,6 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.Button btnBinhLuan;
         private System.Windows.Forms.FlowLayoutPanel panel_binhluan;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnXoaBai;
+        private System.Windows.Forms.PictureBox pcBox;
     }
 }

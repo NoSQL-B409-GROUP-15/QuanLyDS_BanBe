@@ -52,7 +52,7 @@ namespace DoAn_NOSQL
             // 
             this.txTenDangNhap.Location = new System.Drawing.Point(241, 107);
             this.txTenDangNhap.Name = "txTenDangNhap";
-            this.txTenDangNhap.Size = new System.Drawing.Size(246, 31);
+            this.txTenDangNhap.Size = new System.Drawing.Size(246, 32);
             this.txTenDangNhap.TabIndex = 1;
             this.txTenDangNhap.Text = "user02";
             // 
@@ -60,9 +60,11 @@ namespace DoAn_NOSQL
             // 
             this.txMatKhau.Location = new System.Drawing.Point(241, 184);
             this.txMatKhau.Name = "txMatKhau";
-            this.txMatKhau.Size = new System.Drawing.Size(246, 31);
+            this.txMatKhau.PasswordChar = '●';
+            this.txMatKhau.Size = new System.Drawing.Size(246, 32);
             this.txMatKhau.TabIndex = 2;
             this.txMatKhau.Text = "123456789";
+            this.txMatKhau.UseSystemPasswordChar = true;
             // 
             // kryptonLabel2
             // 

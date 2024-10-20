@@ -1,4 +1,5 @@
-﻿using DoAn_NOSQL.Model;
+﻿
+using DoAn_NOSQL.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DoAn_NOSQL.CloudService;
 namespace DoAn_NOSQL
 {
     public partial class PersonalForm : Form
     {
+        CloudIService CloudIService;
+        ServiceConfig ServiceConfig;
         ConnectNeo4j neo4J = new ConnectNeo4j();
         public User userActive
         { get; set; }
@@ -27,6 +30,7 @@ namespace DoAn_NOSQL
             lbname.Text = user.name;
             lbGmail.Text = user.mail;
             lbPhone.Text = user.phoneNumber;
+            LoadImgFromUrl(userActive.image);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -38,7 +42,25 @@ namespace DoAn_NOSQL
         {
             EditForm editForm = new EditForm();
             editForm.userActive = userActive;
+            editForm.SomeEvent += EditForm_SomeEvent;
             editForm.Show();
+        }
+
+        private void EditForm_SomeEvent(object sender, EventArgs e)
+        {
+            EditForm editForm = (EditForm)sender;
+            if(editForm._SomeEvent==1)
+            {
+                paintData();
+            }
+        }
+        public async void paintData()
+        {
+            User user = await neo4J.GetUserByIdAsync(userActive.user_id);
+            lbname.Text = user.name;
+            lbGmail.Text = user.mail;
+            LoadImgFromUrl(userActive.image);
+            lbPhone.Text = user.phoneNumber;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -56,5 +78,15 @@ namespace DoAn_NOSQL
             this.Hide();
             Application.Exit();
         }
+     
+        public void LoadImgFromUrl(string path)
+        {
+            ServiceConfig = new ServiceConfig();
+            CloudIService = new CloudIService(ServiceConfig.CloudinaryCloudName, ServiceConfig.CloudinaryApiKey, ServiceConfig.CloudinaryApiSecret);
+            pcBox.ImageLocation = CloudIService.GetImageUrlByPublicId(path);        
+
+        }
+
+
     }
 }

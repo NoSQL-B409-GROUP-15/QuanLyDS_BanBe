@@ -41,10 +41,10 @@ namespace DoAn_NOSQL
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.btn_post = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btn_order = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.menuTransition = new System.Windows.Forms.Timer(this.components);
-            this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.btnSaoLuu = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnPhucHoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.menuTransition = new System.Windows.Forms.Timer(this.components);
+            this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.headerPanel)).BeginInit();
             this.headerPanel.SuspendLayout();
@@ -83,8 +83,6 @@ namespace DoAn_NOSQL
             this.FormLabel.Name = "FormLabel";
             this.FormLabel.Size = new System.Drawing.Size(265, 28);
             this.FormLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormLabel.StateCommon.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.FormLabel.StateCommon.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.FormLabel.TabIndex = 1;
             this.FormLabel.Values.Text = "Quản lý danh sách bạn bè";
             // 
@@ -124,7 +122,6 @@ namespace DoAn_NOSQL
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(200, 58);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 6;
             // 
             // btn_friend
@@ -144,32 +141,23 @@ namespace DoAn_NOSQL
             this.btn_friend.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_friend.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_friend.StateCommon.Content.LongText.Color1 = System.Drawing.Color.White;
             this.btn_friend.StateCommon.Content.LongText.Color2 = System.Drawing.Color.White;
-            this.btn_friend.StateCommon.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_friend.StateCommon.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btn_friend.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             this.btn_friend.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_friend.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btn_friend.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_friend.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_friend.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btn_friend.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.SolidRightLine;
             this.btn_friend.StatePressed.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.btn_friend.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_friend.TabIndex = 5;
-            this.btn_friend.Values.Image = ((System.Drawing.Image)(resources.GetObject("btn_friend.Values.Image")));
-            this.btn_friend.Values.Text = "      Bạn bè";
+            this.btn_friend.Values.Text = "Bạn bè";
             this.btn_friend.Click += new System.EventHandler(this.btn_friend_Click);
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 15;
             // 
             // btn_post
@@ -189,23 +177,16 @@ namespace DoAn_NOSQL
             this.btn_post.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_post.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_post.StateCommon.Content.LongText.Color1 = System.Drawing.Color.White;
             this.btn_post.StateCommon.Content.LongText.Color2 = System.Drawing.Color.White;
-            this.btn_post.StateCommon.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_post.StateCommon.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btn_post.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             this.btn_post.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_post.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btn_post.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_post.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_post.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btn_post.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.SolidRightLine;
             this.btn_post.StatePressed.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.btn_post.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_post.TabIndex = 7;
-            this.btn_post.Values.Image = ((System.Drawing.Image)(resources.GetObject("btn_post.Values.Image")));
-            this.btn_post.Values.Text = "      Bài đăng";
+            this.btn_post.Values.Text = "Bài đăng";
             this.btn_post.Click += new System.EventHandler(this.btn_post_Click);
             // 
             // btn_order
@@ -224,32 +205,17 @@ namespace DoAn_NOSQL
             this.btn_order.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_order.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_order.StateCommon.Content.LongText.Color1 = System.Drawing.Color.White;
             this.btn_order.StateCommon.Content.LongText.Color2 = System.Drawing.Color.White;
-            this.btn_order.StateCommon.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_order.StateCommon.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btn_order.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             this.btn_order.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_order.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btn_order.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_order.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_order.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btn_order.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.SolidRightLine;
             this.btn_order.StatePressed.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.btn_order.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_order.TabIndex = 8;
-            this.btn_order.Values.Image = ((System.Drawing.Image)(resources.GetObject("btn_order.Values.Image")));
             this.btn_order.Values.Text = " Trang cá nhân";
             this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
-            // 
-            // menuTransition
-            // 
-            this.menuTransition.Interval = 10;
-            // 
-            // sidebarTransition
-            // 
-            this.sidebarTransition.Interval = 10;
             // 
             // btnSaoLuu
             // 
@@ -267,22 +233,15 @@ namespace DoAn_NOSQL
             this.btnSaoLuu.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnSaoLuu.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSaoLuu.StateCommon.Content.LongText.Color1 = System.Drawing.Color.White;
             this.btnSaoLuu.StateCommon.Content.LongText.Color2 = System.Drawing.Color.White;
-            this.btnSaoLuu.StateCommon.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnSaoLuu.StateCommon.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnSaoLuu.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             this.btnSaoLuu.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnSaoLuu.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnSaoLuu.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaoLuu.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnSaoLuu.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnSaoLuu.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.SolidRightLine;
             this.btnSaoLuu.StatePressed.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.btnSaoLuu.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSaoLuu.TabIndex = 9;
-            this.btnSaoLuu.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
             this.btnSaoLuu.Values.Text = "Sao lưu";
             this.btnSaoLuu.Click += new System.EventHandler(this.btnSaoLuu_Click);
             // 
@@ -302,24 +261,25 @@ namespace DoAn_NOSQL
             this.btnPhucHoi.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnPhucHoi.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnPhucHoi.StateCommon.Content.LongText.Color1 = System.Drawing.Color.White;
             this.btnPhucHoi.StateCommon.Content.LongText.Color2 = System.Drawing.Color.White;
-            this.btnPhucHoi.StateCommon.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnPhucHoi.StateCommon.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnPhucHoi.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             this.btnPhucHoi.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnPhucHoi.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnPhucHoi.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhucHoi.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnPhucHoi.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnPhucHoi.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.SolidRightLine;
             this.btnPhucHoi.StatePressed.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.btnPhucHoi.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnPhucHoi.TabIndex = 10;
-            this.btnPhucHoi.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.Values.Image")));
             this.btnPhucHoi.Values.Text = "Phục hồi";
             this.btnPhucHoi.Click += new System.EventHandler(this.btnPhucHoi_Click);
+            // 
+            // menuTransition
+            // 
+            this.menuTransition.Interval = 10;
+            // 
+            // sidebarTransition
+            // 
+            this.sidebarTransition.Interval = 10;
             // 
             // MenuForm
             // 

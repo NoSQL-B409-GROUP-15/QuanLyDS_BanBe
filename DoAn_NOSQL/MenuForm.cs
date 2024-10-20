@@ -96,6 +96,7 @@ namespace DoAn_NOSQL
         {
             PersonalForm personal = new PersonalForm();
             personal.userActive = userActive;
+            personal.LoadImgFromUrl(userActive.image);
             util.OpenChildForm(personal, panelBody);
         }
         private async void btnSaoLuu_Click(object sender, EventArgs e)

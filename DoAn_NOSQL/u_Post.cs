@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DoAn_NOSQL.CloudService;
 using DoAn_NOSQL.Model;
 namespace DoAn_NOSQL
 {
@@ -61,12 +62,19 @@ namespace DoAn_NOSQL
                 }
             }
         }
-
+        ServiceConfig ServiceConfig;
+        CloudIService CloudIService;
+        public void LoadImgFromUrl(string path)
+        {
+            ServiceConfig = new ServiceConfig();
+            CloudIService = new CloudIService(ServiceConfig.CloudinaryCloudName, ServiceConfig.CloudinaryApiKey, ServiceConfig.CloudinaryApiSecret);
+            pcBox.ImageLocation = CloudIService.GetImageUrlByPublicId(path);
+        }
         public void PaintData(Post post, User user)
         {
             userActive = user;
             Post = post;
-
+            LoadImgFromUrl(user.image);
             if (post.isLike)
             {
                 isLiked = false;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DoAn_NOSQL.CloudService;
 using DoAn_NOSQL.Model;
 namespace DoAn_NOSQL
 {
@@ -22,14 +23,24 @@ namespace DoAn_NOSQL
         public void PaintData(Comment comment)
         {
             Comment = comment;
+            LoadImgFromUrl(comment.commenter.image);
             lblNoiDungComment.Text = comment.content;
             lblNguoiCmt.Text = comment.commenter.name;
             lblThoiGianComment.Text = DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(comment.created_at))
                                             .ToString("yyyy-MM-dd HH:mm:ss");
         }
+        ServiceConfig ServiceConfig;
+        CloudIService CloudIService;
+        public void LoadImgFromUrl(string path)
+        {
+            ServiceConfig = new ServiceConfig();
+            CloudIService = new CloudIService(ServiceConfig.CloudinaryCloudName, ServiceConfig.CloudinaryApiKey, ServiceConfig.CloudinaryApiSecret);
+            pcBox.ImageLocation = CloudIService.GetImageUrlByPublicId(path);
+        }
         public void PaintDataViewInfo(Comment comment)
         {
             Comment = comment;
+            LoadImgFromUrl(comment.commenter.image);
             lblNoiDungComment.Text = comment.content;
             lblNguoiCmt.Text = comment.commenter.name;
             lblThoiGianComment.Text = DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(comment.created_at))

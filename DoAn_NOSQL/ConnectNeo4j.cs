@@ -594,7 +594,7 @@ namespace DoAn_NOSQL
                     return result.ConsumeAsync().Result.Counters.RelationshipsDeleted > 0;
             }
         }
-        public async Task<bool> UpdateUserAsync(int userId, string name, string phone, string newEmail)
+        public async Task<bool> UpdateUserAsync(int userId, string name, string phone, string newEmail,string path)
         {
             using (var session = _driver.AsyncSession())
             {
@@ -604,9 +604,9 @@ namespace DoAn_NOSQL
                         "MATCH (u:USER {user_id: $userId}) " +
                         "SET u.name = $name, " +
                         "    u.phoneNumber = $phone, " +
-                        "    u.mail = $newEmail " +
+                        "    u.mail = $newEmail , u.image =$path " +
                         "RETURN u",
-                        new { userId,name, phone, newEmail });
+                        new {userId,name,phone,newEmail,path});
 
                     return result != null;
                 }
@@ -737,15 +737,15 @@ namespace DoAn_NOSQL
 
                         foreach (var node in backupData.Nodes)
                         {
-                            // Chuyển đổi labels từ JArray thành List<string>
+                            // Convert labels from JArray to List<string>
                             var labels = ((JArray)node.labels).ToObject<List<string>>();
-                            var labelsString = string.Join(":", labels);
+                            var labelsString = string.Join(":", labels); // Combine labels into a single string for Cypher query
 
-                            // Chuyển đổi properties từ JObject thành Dictionary<string, object>
+                            // Convert properties from JObject to Dictionary<string, object>
                             var properties = ((JObject)node.properties).ToObject<Dictionary<string, object>>();
 
-                            // Tạo nút và lấy ID mới
-                            var createNodeQuery = $"CREATE (n:USER) SET n += $props RETURN ID(n) as newId";
+                            // Create node with its original labels and get the new ID
+                            var createNodeQuery = $"CREATE (n:{labelsString}) SET n += $props RETURN ID(n) as newId";
                             var parameters = new { props = properties };
                             var result = await transaction.RunAsync(createNodeQuery, parameters);
 

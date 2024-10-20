@@ -34,11 +34,11 @@ namespace DoAn_NOSQL
             this.btnIsBanBe = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.listPost = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBack = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.pcAvatar = new System.Windows.Forms.PictureBox();
+            this.pcBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnTuChoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pcAvatar)).BeginInit();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,28 +85,38 @@ namespace DoAn_NOSQL
             this.btnBack.TabIndex = 5;
             this.btnBack.Values.Text = "Back ha";
             // 
-            // pcAvatar
+            // pcBox
             // 
-            this.pcAvatar.BackgroundImage = global::DoAn_NOSQL.Properties.Resources.hehe_nosql_drawio;
-            this.pcAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcAvatar.Location = new System.Drawing.Point(164, 18);
-            this.pcAvatar.Name = "pcAvatar";
-            this.pcAvatar.Size = new System.Drawing.Size(175, 132);
-            this.pcAvatar.TabIndex = 0;
-            this.pcAvatar.TabStop = false;
+            this.pcBox.BackgroundImage = global::DoAn_NOSQL.Properties.Resources.hehe_nosql_drawio;
+            this.pcBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcBox.Location = new System.Drawing.Point(164, 18);
+            this.pcBox.Name = "pcBox";
+            this.pcBox.Size = new System.Drawing.Size(175, 132);
+            this.pcBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcBox.TabIndex = 0;
+            this.pcBox.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnTuChoi);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.lblSoLuongBanChung);
-            this.panel1.Controls.Add(this.pcAvatar);
+            this.panel1.Controls.Add(this.pcBox);
             this.panel1.Controls.Add(this.btnIsBanBe);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1139, 153);
             this.panel1.TabIndex = 6;
+            // 
+            // btnTuChoi
+            // 
+            this.btnTuChoi.Location = new System.Drawing.Point(944, 65);
+            this.btnTuChoi.Name = "btnTuChoi";
+            this.btnTuChoi.Size = new System.Drawing.Size(152, 49);
+            this.btnTuChoi.TabIndex = 6;
+            this.btnTuChoi.Values.Text = "Từ chối";
+            this.btnTuChoi.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -124,15 +134,6 @@ namespace DoAn_NOSQL
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // btnTuChoi
-            // 
-            this.btnTuChoi.Location = new System.Drawing.Point(944, 65);
-            this.btnTuChoi.Name = "btnTuChoi";
-            this.btnTuChoi.Size = new System.Drawing.Size(152, 49);
-            this.btnTuChoi.TabIndex = 6;
-            this.btnTuChoi.Values.Text = "Từ chối";
-            this.btnTuChoi.Visible = false;
-            // 
             // ViewProfileUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -141,7 +142,7 @@ namespace DoAn_NOSQL
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ViewProfileUserForm";
             this.Text = "ViewProfileUserForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pcAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -152,7 +153,7 @@ namespace DoAn_NOSQL
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pcAvatar;
+        private System.Windows.Forms.PictureBox pcBox;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblName;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSoLuongBanChung;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnIsBanBe;

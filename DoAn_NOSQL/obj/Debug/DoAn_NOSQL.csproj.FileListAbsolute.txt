@@ -81,3 +81,7 @@ C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.csproj.CoreCompileIn
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.csproj.CopyComplete
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.exe
 C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Debug\DoAn_NOSQL.pdb
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\bin\Debug\CloudinaryDotNet.dll
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\bin\Debug\CloudinaryDotNet.xml
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\bin\Debug\System.Configuration.ConfigurationManager.xml

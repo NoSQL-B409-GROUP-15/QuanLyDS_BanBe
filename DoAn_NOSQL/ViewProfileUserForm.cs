@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using DoAn_NOSQL.CloudService;
 using DoAn_NOSQL.Model;
 namespace DoAn_NOSQL
 {
@@ -25,7 +26,14 @@ namespace DoAn_NOSQL
             btnIsBanBe.Click += BtnIsBanBe_Click;
             btnTuChoi.Click += BtnTuChoi_Click;
         }
-
+        ServiceConfig ServiceConfig;
+        CloudIService CloudIService;
+        public void LoadImgFromUrl(string path)
+        {
+            ServiceConfig = new ServiceConfig();
+            CloudIService = new CloudIService(ServiceConfig.CloudinaryCloudName, ServiceConfig.CloudinaryApiKey, ServiceConfig.CloudinaryApiSecret);
+            pcBox.ImageLocation = CloudIService.GetImageUrlByPublicId(path);
+        }
         private async void BtnTuChoi_Click(object sender, EventArgs e)
         {
             bool flag = await neo4J.CancelFriendRequest(InfoUser.user_id, UserActive.user_id);
@@ -120,7 +128,7 @@ namespace DoAn_NOSQL
             InfoUser = await neo4J.GetUsers(idInfo);
             UserActive = userActive;
 
-
+            LoadImgFromUrl(InfoUser.image);
             List<User> listUsers = await neo4J.ListMutalFriend(userActive.user_id, idInfo);
 
             lblName.Text = InfoUser.name;
@@ -147,6 +155,7 @@ namespace DoAn_NOSQL
                 };
                 u_Post.EventClick += U_Post_EventClick;
                 u_Post.PaintDataViewInfor(item, userActive);
+                u_Post.LoadImgFromUrl(InfoUser.image);
                 this.listPost.Controls.Add(u_Post);
             }
             btnTuChoi.Visible = false;
