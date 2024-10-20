@@ -806,6 +806,43 @@ namespace DoAn_NOSQL
             }
         }
 
+        public async Task<bool> CreateUser(string username, string password, string email,string name,string phone )
+        {
+            using (var session = _driver.AsyncSession())
+            {
+                try
+                {
+                    // Kiểm tra xem tên người dùng đã tồn tại chưa
+                    var existingUserResult = await session.RunAsync(
+                        "MATCH (u:USER {username: $username}) RETURN COUNT(u) AS count",
+                        new { username });
+
+                    if (await existingUserResult.FetchAsync() && existingUserResult.Current["count"].As<int>() > 0)
+                    {
+                        return false; // Tên người dùng đã tồn tại
+                    }
+
+                    // Tạo người dùng mới
+                    int userId;
+                    Random random = new Random();
+                    userId = random.Next(1, 1000000); // Tạo user_id ngẫu nhiên
+                    string image = "Nike-application/401786250_1727402151094177_8906147692508802950_n";
+                    // Tạo người dùng mới
+                    var result = await session.RunAsync(
+                        "CREATE (u:USER {user_id: $userId, username: $username, password: $password, mail: $email, created_at: timestamp(), phoneNumber: $phone, name: $name,image: $image}) " +
+                        "RETURN u",
+                        new { userId, username, password, email, phone, name,image });
+                    return await result.FetchAsync();
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý ngoại lệ nếu cần thiết
+                    return false;
+                }
+            }
+        }
+
+
 
     }
 
