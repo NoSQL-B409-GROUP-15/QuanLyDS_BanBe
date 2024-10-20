@@ -456,6 +456,9 @@ namespace DoAn_NOSQL
             EventClick.Invoke(this, EventArgs.Empty);
         }
 
+        private void Form_DsBanBe_Load_1(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -98,5 +98,62 @@ namespace DoAn_NOSQL
             personal.userActive = userActive;
             util.OpenChildForm(personal, panelBody);
         }
+        private async void btnSaoLuu_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new SaveFileDialog())
+            {
+                dialog.Filter = "JSON Files (*.json)|*.json";
+                dialog.Title = "Chọn vị trí tệp sao lưu";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string backupFilePath = dialog.FileName;
+                    try
+                    {
+                        ConnectNeo4j neo4j = new ConnectNeo4j();
+                        await neo4j.BackupNeo4jData(backupFilePath);
+                        
+                        MessageBox.Show("Sao lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Sao lưu thất bại: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private async void btnPhucHoi_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new OpenFileDialog())
+            {
+                dialog.Filter = "JSON Files (*.json)|*.json";
+                dialog.Title = "Chọn tệp sao lưu để khôi phục";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string backupFilePath = dialog.FileName;
+                    var confirmResult = MessageBox.Show("Khôi phục dữ liệu sẽ ghi đè lên dữ liệu hiện có. Bạn có muốn tiếp tục không?",
+                                                        "Xác nhận khôi phục",
+                                                        MessageBoxButtons.YesNo,
+                                                        MessageBoxIcon.Warning);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                         ConnectNeo4j neo4j = new ConnectNeo4j();               
+                         await neo4j.RestoreNeo4jData(backupFilePath);
+
+                            MessageBox.Show("Phục hồi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Phục hồi thất bại: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
