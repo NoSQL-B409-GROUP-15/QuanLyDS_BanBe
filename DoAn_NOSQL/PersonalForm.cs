@@ -24,14 +24,28 @@ namespace DoAn_NOSQL
         private async void PersonalForm_Load(object sender, EventArgs e)
         {
             User user = await neo4J.GetUserByIdAsync(userActive.user_id);
-            tBten.Text = user.name;
-            tBGmail.Text = user.mail;
-            tBDT.Text = user.numberPhone;
+            lbname.Text = user.name;
+            lbGmail.Text = user.mail;
+            lbPhone.Text = user.numberPhone;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EditForm editForm = new EditForm();
+            editForm.userActive = userActive;
+            editForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ChangePass changePass = new ChangePass();
+            changePass.userActive = userActive;
+            changePass.Show();
         }
     }
 }

@@ -3,7 +3,39 @@
   "WorkspaceRootPath": "D:\\QuanLyDS_BanBe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\personalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|d:\\quanlyds_banbe\\doan_nosql\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|d:\\quanlyds_banbe\\doan_nosql\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|d:\\quanlyds_banbe\\doan_nosql\\connectneo4j.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\connectneo4j.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\editform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\editform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\editform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\editform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|d:\\quanlyds_banbe\\doan_nosql\\editform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\editform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|d:\\quanlyds_banbe\\doan_nosql\\personalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\personalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,27 +43,19 @@
       "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\personalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\resources\\unlike.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\resources\\unlike.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|d:\\quanlyds_banbe\\doan_nosql\\connectneo4j.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\connectneo4j.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|d:\\quanlyds_banbe\\doan_nosql\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\form_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\form_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|d:\\quanlyds_banbe\\doan_nosql\\postform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\postform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\postform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -79,14 +103,6 @@
       "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\form_dsbanbe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\resources\\4926585.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\resources\\4926585.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\resources\\unlike.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\resources\\unlike.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|D:\\QuanLyDS_BanBe\\doan_nosql\\model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E546C511-64C4-427C-A134-59CE6D8B3343}|DoAn_NOSQL\\DoAn_NOSQL.csproj|solutionrelative:doan_nosql\\model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -102,81 +118,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PostForm.cs [Design]",
-              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PostForm.cs",
-              "RelativeDocumentMoniker": "DoAn_NOSQL\\PostForm.cs",
-              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PostForm.cs [Design]",
-              "RelativeToolTip": "DoAn_NOSQL\\PostForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T16:24:35.027Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MenuForm.cs [Design]",
-              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\MenuForm.cs",
-              "RelativeDocumentMoniker": "DoAn_NOSQL\\MenuForm.cs",
-              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\MenuForm.cs [Design]",
-              "RelativeToolTip": "DoAn_NOSQL\\MenuForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T16:22:00.123Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PersonalForm.cs [Design]",
-              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.cs",
-              "RelativeDocumentMoniker": "DoAn_NOSQL\\PersonalForm.cs",
-              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.cs [Design]",
-              "RelativeToolTip": "DoAn_NOSQL\\PersonalForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:49:00.122Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PersonalForm.cs",
-              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.cs",
-              "RelativeDocumentMoniker": "DoAn_NOSQL\\PersonalForm.cs",
-              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.cs",
-              "RelativeToolTip": "DoAn_NOSQL\\PersonalForm.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAADwvxwAAAApAAAAAAAAAA==",
+              "Title": "ChangePass.cs",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\ChangePass.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\ChangePass.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\ChangePass.cs",
+              "RelativeToolTip": "DoAn_NOSQL\\ChangePass.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAywCcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:55:54.385Z",
+              "WhenOpened": "2024-10-20T10:55:37.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form_DangNhap.cs [Design]",
-              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Form_DangNhap.cs",
-              "RelativeDocumentMoniker": "DoAn_NOSQL\\Form_DangNhap.cs",
-              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Form_DangNhap.cs [Design]",
-              "RelativeToolTip": "DoAn_NOSQL\\Form_DangNhap.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "ChangePass.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\ChangePass.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\ChangePass.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\ChangePass.cs [Design]",
+              "RelativeToolTip": "DoAn_NOSQL\\ChangePass.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:25:07.556Z",
+              "WhenOpened": "2024-10-20T10:53:12.195Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ConnectNeo4j.cs",
-              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\ConnectNeo4j.cs",
-              "RelativeDocumentMoniker": "DoAn_NOSQL\\ConnectNeo4j.cs",
-              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\ConnectNeo4j.cs",
-              "RelativeToolTip": "DoAn_NOSQL\\ConnectNeo4j.cs",
-              "ViewState": "AgIAAIsBAAAAAAAAAAA1wKcBAAAgAAAAAAAAAA==",
+              "Title": "EditForm.cs",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\EditForm.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\EditForm.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\EditForm.cs",
+              "RelativeToolTip": "DoAn_NOSQL\\EditForm.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:25:19.651Z",
+              "WhenOpened": "2024-10-19T09:08:50.031Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditForm.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\EditForm.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\EditForm.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\EditForm.cs [Design]",
+              "RelativeToolTip": "DoAn_NOSQL\\EditForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T09:08:04.553Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -193,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MenuForm.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\MenuForm.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\MenuForm.cs",
@@ -206,7 +202,92 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
+              "Title": "PersonalForm.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\PersonalForm.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.cs [Design]",
+              "RelativeToolTip": "DoAn_NOSQL\\PersonalForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:49:00.122Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConnectNeo4j.cs",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\ConnectNeo4j.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\ConnectNeo4j.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\ConnectNeo4j.cs",
+              "RelativeToolTip": "DoAn_NOSQL\\ConnectNeo4j.cs",
+              "ViewState": "AgIAANYBAAAAAAAAAAAiwOwBAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:25:19.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EditForm.Designer.cs",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\EditForm.Designer.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\EditForm.Designer.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\EditForm.Designer.cs",
+              "RelativeToolTip": "DoAn_NOSQL\\EditForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T11:07:29.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PersonalForm.cs",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\PersonalForm.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.cs",
+              "RelativeToolTip": "DoAn_NOSQL\\PersonalForm.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAADwvy4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T10:49:24.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "unlike.png -  [English (United Kingdom)] - PNG [242x208, 8 bit, PNG]",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Resources\\unlike.png",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\Resources\\unlike.png",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Resources\\unlike.png -  [English (United Kingdom)] - PNG [242x208, 8 bit, PNG]",
+              "RelativeToolTip": "DoAn_NOSQL\\Resources\\unlike.png -  [English (United Kingdom)] - PNG [242x208, 8 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-10-18T15:24:59.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Form_DangNhap.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Form_DangNhap.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\Form_DangNhap.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Form_DangNhap.cs [Design]",
+              "RelativeToolTip": "DoAn_NOSQL\\Form_DangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:25:07.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MenuForm.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\MenuForm.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\MenuForm.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\MenuForm.cs [Design]",
+              "RelativeToolTip": "DoAn_NOSQL\\MenuForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:22:00.123Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "PostForm.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PostForm.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\PostForm.cs",
@@ -214,12 +295,22 @@
               "RelativeToolTip": "DoAn_NOSQL\\PostForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T16:43:11.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T16:43:11.34Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
+              "Title": "PostForm.cs [Design]",
+              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PostForm.cs",
+              "RelativeDocumentMoniker": "DoAn_NOSQL\\PostForm.cs",
+              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PostForm.cs [Design]",
+              "RelativeToolTip": "DoAn_NOSQL\\PostForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:24:35.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "MenuForm.Designer.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\MenuForm.Designer.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\MenuForm.Designer.cs",
@@ -232,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Form_DsBanBe.cs [Design]",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Form_DsBanBe.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\Form_DsBanBe.cs",
@@ -243,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "PersonalForm.Designer.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PersonalForm.Designer.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\PersonalForm.Designer.cs",
@@ -256,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "Util.cs [Design]",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Util.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\Util.cs",
@@ -267,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "u_comment.Designer.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\u_comment.Designer.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\u_comment.Designer.cs",
@@ -279,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "u_Post.Designer.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\u_Post.Designer.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\u_Post.Designer.cs",
@@ -291,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "Form_DsBanBe.Designer.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Form_DsBanBe.Designer.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\Form_DsBanBe.Designer.cs",
@@ -303,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "PostForm.Designer.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\PostForm.Designer.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\PostForm.Designer.cs",
@@ -311,12 +402,11 @@
               "RelativeToolTip": "DoAn_NOSQL\\PostForm.Designer.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAASwFoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T16:14:07.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T16:14:07.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "Form_DangNhap.Designer.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Form_DangNhap.Designer.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\Form_DangNhap.Designer.cs",
@@ -324,12 +414,11 @@
               "RelativeToolTip": "DoAn_NOSQL\\Form_DangNhap.Designer.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAASwIIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T16:13:01.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T16:13:01.464Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "Form_DsBanBe.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Form_DsBanBe.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\Form_DsBanBe.cs",
@@ -341,29 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "4926585.png -  [English (United Kingdom)] - PNG [512x512, 32 bit, PNG]",
-              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Resources\\4926585.png",
-              "RelativeDocumentMoniker": "DoAn_NOSQL\\Resources\\4926585.png",
-              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Resources\\4926585.png -  [English (United Kingdom)] - PNG [512x512, 32 bit, PNG]",
-              "RelativeToolTip": "DoAn_NOSQL\\Resources\\4926585.png -  [English (United Kingdom)] - PNG [512x512, 32 bit, PNG]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2024-10-18T15:25:01.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "unlike.png -  [English (United Kingdom)] - PNG [242x208, 8 bit, PNG]",
-              "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Resources\\unlike.png",
-              "RelativeDocumentMoniker": "DoAn_NOSQL\\Resources\\unlike.png",
-              "ToolTip": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Resources\\unlike.png -  [English (United Kingdom)] - PNG [242x208, 8 bit, PNG]",
-              "RelativeToolTip": "DoAn_NOSQL\\Resources\\unlike.png -  [English (United Kingdom)] - PNG [242x208, 8 bit, PNG]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2024-10-18T15:24:59.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "Comment.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Model\\Comment.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\Model\\Comment.cs",
@@ -375,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\QuanLyDS_BanBe\\DoAn_NOSQL\\Model\\User.cs",
               "RelativeDocumentMoniker": "DoAn_NOSQL\\Model\\User.cs",
