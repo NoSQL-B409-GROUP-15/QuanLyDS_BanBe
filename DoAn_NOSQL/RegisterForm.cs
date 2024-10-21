@@ -1,3 +1,4 @@
+﻿
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,9 +18,10 @@ namespace DoAn_NOSQL
         public RegisterForm()
         {
             InitializeComponent();
+            button1.Click += Button1_Click;
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void Button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "")
             {
@@ -27,7 +29,8 @@ namespace DoAn_NOSQL
                 return;
             }
             bool isCreated = await neo4J.CreateUser(textBox1.Text, textBox5.Text, textBox4.Text, textBox2.Text, textBox3.Text);
-            if (isCreated) { 
+            if (isCreated)
+            {
                 MessageBox.Show("Đã tạo tài khoản thành công");
             }
             else
@@ -36,5 +39,7 @@ namespace DoAn_NOSQL
             }
 
         }
+
+     
     }
 }

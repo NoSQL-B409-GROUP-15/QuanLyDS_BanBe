@@ -36,6 +36,7 @@ namespace DoAn_NOSQL
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnHuyBo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnDangNhap = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // kryptonLabel1
@@ -63,7 +64,7 @@ namespace DoAn_NOSQL
             this.txMatKhau.PasswordChar = '●';
             this.txMatKhau.Size = new System.Drawing.Size(246, 32);
             this.txMatKhau.TabIndex = 2;
-            this.txMatKhau.Text = "123456789";
+            this.txMatKhau.Text = "123";
             this.txMatKhau.UseSystemPasswordChar = true;
             // 
             // kryptonLabel2
@@ -84,7 +85,7 @@ namespace DoAn_NOSQL
             // 
             // btnHuyBo
             // 
-            this.btnHuyBo.Location = new System.Drawing.Point(241, 258);
+            this.btnHuyBo.Location = new System.Drawing.Point(111, 258);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(126, 51);
             this.btnHuyBo.TabIndex = 5;
@@ -99,11 +100,21 @@ namespace DoAn_NOSQL
             this.btnDangNhap.Values.Text = "Đăng nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(261, 258);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 51);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Đăng ký";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form_DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 359);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.btnHuyBo);
             this.Controls.Add(this.kryptonLabel3);
@@ -127,6 +138,8 @@ namespace DoAn_NOSQL
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnHuyBo;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDangNhap;
+        private System.Windows.Forms.Button button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
     }
 }
 

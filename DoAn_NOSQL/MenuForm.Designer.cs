@@ -34,7 +34,6 @@ namespace DoAn_NOSQL
             this.panelBody = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.headerPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.FormLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.btn_Menu = new System.Windows.Forms.PictureBox();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btn_friend = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -43,18 +42,24 @@ namespace DoAn_NOSQL
             this.btn_order = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSaoLuu = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnPhucHoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnDangXuat = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Menu = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
+            this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerPanel)).BeginInit();
             this.headerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Menu)).BeginInit();
             this.sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Menu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBody
             // 
+            this.panelBody.Controls.Add(this.pictureBox1);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(248, 48);
             this.panelBody.Margin = new System.Windows.Forms.Padding(0);
@@ -86,18 +91,6 @@ namespace DoAn_NOSQL
             this.FormLabel.TabIndex = 1;
             this.FormLabel.Values.Text = "Quản lý danh sách bạn bè";
             // 
-            // btn_Menu
-            // 
-            this.btn_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
-            this.btn_Menu.Location = new System.Drawing.Point(22, 12);
-            this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(26, 28);
-            this.btn_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_Menu.TabIndex = 1;
-            this.btn_Menu.TabStop = false;
-            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
-            // 
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
@@ -107,6 +100,7 @@ namespace DoAn_NOSQL
             this.sidebar.Controls.Add(this.btn_order);
             this.sidebar.Controls.Add(this.btnSaoLuu);
             this.sidebar.Controls.Add(this.btnPhucHoi);
+            this.sidebar.Controls.Add(this.btnDangXuat);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
@@ -273,6 +267,34 @@ namespace DoAn_NOSQL
             this.btnPhucHoi.Values.Text = "Phục hồi";
             this.btnPhucHoi.Click += new System.EventHandler(this.btnPhucHoi_Click);
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.ListItem;
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 348);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.btnDangXuat.Size = new System.Drawing.Size(248, 58);
+            this.btnDangXuat.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnDangXuat.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnDangXuat.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.btnDangXuat.StateCommon.Border.Color1 = System.Drawing.Color.Cyan;
+            this.btnDangXuat.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnDangXuat.StateCommon.Content.LongText.Color1 = System.Drawing.Color.White;
+            this.btnDangXuat.StateCommon.Content.LongText.Color2 = System.Drawing.Color.White;
+            this.btnDangXuat.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
+            this.btnDangXuat.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnDangXuat.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnDangXuat.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.SolidRightLine;
+            this.btnDangXuat.StatePressed.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.btnDangXuat.TabIndex = 11;
+            this.btnDangXuat.Values.Text = "Đăng xuất";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // menuTransition
             // 
             this.menuTransition.Interval = 10;
@@ -280,6 +302,29 @@ namespace DoAn_NOSQL
             // sidebarTransition
             // 
             this.sidebarTransition.Interval = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DoAn_NOSQL.Properties.Resources._04HUXgEu0I3mdCOejOjQpNE_5__1620748900;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1202, 570);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_Menu
+            // 
+            this.btn_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
+            this.btn_Menu.Location = new System.Drawing.Point(22, 12);
+            this.btn_Menu.Name = "btn_Menu";
+            this.btn_Menu.Size = new System.Drawing.Size(26, 28);
+            this.btn_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_Menu.TabIndex = 1;
+            this.btn_Menu.TabStop = false;
+            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
             // 
             // MenuForm
             // 
@@ -293,12 +338,14 @@ namespace DoAn_NOSQL
             this.Text = "MenuForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).EndInit();
+            this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.headerPanel)).EndInit();
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Menu)).EndInit();
             this.sidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Menu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,5 +366,7 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.Timer sidebarTransition;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSaoLuu;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnPhucHoi;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnDangXuat;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

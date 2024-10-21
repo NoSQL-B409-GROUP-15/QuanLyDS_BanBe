@@ -135,6 +135,12 @@
   <ItemGroup>
     <Compile Include="CloudService\CloudIService.cs" />
     <Compile Include="CloudService\ServiceConfig.cs" />
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Status.cs" />
     <Compile Include="ChangePass.cs">
       <SubType>Form</SubType>
@@ -219,6 +225,9 @@
     <EmbeddedResource Include="PersonalForm.resx">
       <DependentUpon>PersonalForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="u_comment.resx">
       <DependentUpon>u_comment.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hehe_nosql.drawio.png" />
+    <None Include="Resources\04HUXgEu0I3mdCOejOjQpNE-5..1620748900.jpg" />
     <Content Include="Resources\download.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

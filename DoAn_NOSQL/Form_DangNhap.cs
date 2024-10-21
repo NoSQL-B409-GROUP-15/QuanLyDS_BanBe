@@ -48,10 +48,10 @@ namespace DoAn_NOSQL
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            RegisterForm rg = new RegisterForm();
-            rg.Show();
+                RegisterForm rg = new RegisterForm();
+                rg.Show();           
         }
     }
 }

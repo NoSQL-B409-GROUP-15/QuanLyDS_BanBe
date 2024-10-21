@@ -45,18 +45,22 @@ namespace DoAn_NOSQL
             editForm.SomeEvent += EditForm_SomeEvent;
             editForm.Show();
         }
-
+        public int Event { get; set; }
+        public event EventHandler SomeEvent;
         private void EditForm_SomeEvent(object sender, EventArgs e)
         {
             EditForm editForm = (EditForm)sender;
             if(editForm._SomeEvent==1)
             {
+                Event = 1;
                 paintData();
+                SomeEvent.Invoke(this, EventArgs.Empty);
             }
         }
         public async void paintData()
         {
-            User user = await neo4J.GetUserByIdAsync(userActive.user_id);
+            User user = await neo4J.GetUsers(userActive.user_id);
+            userActive = user;
             lbname.Text = user.name;
             lbGmail.Text = user.mail;
             LoadImgFromUrl(userActive.image);

@@ -301,7 +301,7 @@ namespace DoAn_NOSQL
             dataGridView.Columns.Add("Name", "Tên");
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Thao tác";
-            buttonColumn.Text = "Delete";
+            buttonColumn.Text = "Xóa kết bạn";
             buttonColumn.UseColumnTextForButtonValue = true;
             dataGridView.Columns.Add(buttonColumn);
         }
@@ -373,7 +373,7 @@ namespace DoAn_NOSQL
                 foreach (var user in users)
                 {
                     string action = user.HasSendingRequest ? "Gỡ lời mời kết bạn" : "Kết bạn";
-                    dataIsNotFriend.Rows.Add(user.user_id, user.username, action);
+                    dataIsNotFriend.Rows.Add(user.user_id, user.name, action);
                 }
             }
             catch (Exception)
@@ -390,7 +390,7 @@ namespace DoAn_NOSQL
                 dataFriend.Rows.Clear();
                 foreach (var user in users)
                 {
-                    dataFriend.Rows.Add(user.user_id, user.username);
+                    dataFriend.Rows.Add(user.user_id, user.name);
                 }
             }
             catch (Exception)
@@ -414,7 +414,7 @@ namespace DoAn_NOSQL
 
                     foreach (var item in sentRequestList)
                     {
-                        dataSentRequest.Rows.Add(item.user_id, item.username);
+                        dataSentRequest.Rows.Add(item.user_id, item.name);
                     }
                 }
             }
@@ -438,7 +438,7 @@ namespace DoAn_NOSQL
 
                     foreach (var item in users)
                     {
-                        dataRevciedFriendRequest.Rows.Add(item.user_id, item.username, item.mutualFriend);
+                        dataRevciedFriendRequest.Rows.Add(item.user_id, item.name, item.mutualFriend);
                     }
                 }
             }

@@ -49,7 +49,10 @@ namespace DoAn_NOSQL
             }
 
         }
-
+        public void setVisibleBtnBack()
+        {
+            btnBack.Visible = false;
+        }
         private async void BtnIsBanBe_Click(object sender, EventArgs e)
         {
             KryptonButton btn = (KryptonButton)sender;
@@ -154,7 +157,7 @@ namespace DoAn_NOSQL
 
                 };
                 u_Post.EventClick += U_Post_EventClick;
-                u_Post.PaintDataViewInfor(item, userActive);
+                u_Post.PaintDataViewInfor(item, InfoUser,userActive);
                 u_Post.LoadImgFromUrl(InfoUser.image);
                 this.listPost.Controls.Add(u_Post);
             }
@@ -174,7 +177,7 @@ namespace DoAn_NOSQL
                 bool isSentRequet = await neo4J.IsSentRequestFriend(userActive.user_id, idInfo);
                 if (isSentRequet)
                 {
-                    btnIsBanBe.Text = "Đã gửi lời mời kết bạn";
+                    btnIsBanBe.Text = "Đã gửi kết bạn";
                     btnIsBanBe.Tag = Status.DaGuiLoiMoi;
                     return;
                 }
@@ -184,7 +187,7 @@ namespace DoAn_NOSQL
                     bool youSentRequest = await neo4J.IsSentRequestFriend(idInfo, userActive.user_id);
                     if (youSentRequest)
                     {
-                        btnIsBanBe.Text = "Chấp nhận lời mời kết bạn";
+                        btnIsBanBe.Text = "Chấp nhận kết bạn";
                         btnIsBanBe.Tag = Status.ChapNhan;
                         btnTuChoi.Visible = true;
                         btnTuChoi.Tag = Status.HuyLoiMoi;

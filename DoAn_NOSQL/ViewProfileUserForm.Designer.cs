@@ -38,9 +38,11 @@ namespace DoAn_NOSQL
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTuChoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -61,7 +63,7 @@ namespace DoAn_NOSQL
             // 
             // btnIsBanBe
             // 
-            this.btnIsBanBe.Location = new System.Drawing.Point(745, 65);
+            this.btnIsBanBe.Location = new System.Drawing.Point(3, 3);
             this.btnIsBanBe.Name = "btnIsBanBe";
             this.btnIsBanBe.Size = new System.Drawing.Size(163, 49);
             this.btnIsBanBe.TabIndex = 3;
@@ -98,11 +100,10 @@ namespace DoAn_NOSQL
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnTuChoi);
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.lblSoLuongBanChung);
             this.panel1.Controls.Add(this.pcBox);
-            this.panel1.Controls.Add(this.btnIsBanBe);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -111,7 +112,7 @@ namespace DoAn_NOSQL
             // 
             // btnTuChoi
             // 
-            this.btnTuChoi.Location = new System.Drawing.Point(944, 65);
+            this.btnTuChoi.Location = new System.Drawing.Point(172, 3);
             this.btnTuChoi.Name = "btnTuChoi";
             this.btnTuChoi.Size = new System.Drawing.Size(152, 49);
             this.btnTuChoi.TabIndex = 6;
@@ -134,6 +135,21 @@ namespace DoAn_NOSQL
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.btnIsBanBe, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnTuChoi, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(710, 18);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(328, 100);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
             // ViewProfileUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -142,11 +158,13 @@ namespace DoAn_NOSQL
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ViewProfileUserForm";
             this.Text = "ViewProfileUserForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pcBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -162,5 +180,6 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTuChoi;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

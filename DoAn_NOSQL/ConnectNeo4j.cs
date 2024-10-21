@@ -116,28 +116,29 @@ namespace DoAn_NOSQL
                 try
                 {
                     var result = await session.RunAsync(
-    "MATCH (u:USER) " +
-    "WHERE NOT (u)-[:IS_FRIEND_WITH]-(:USER { user_id: $id }) " +
-    "  AND u.user_id <> $id " +
-    "  AND NOT (u)-[:SENT_REQUEST]->(:FRIENDREQUEST { from_user_id: u.user_id, to_user_id: $id }) " +
-    "OPTIONAL MATCH (fr:FRIENDREQUEST { from_user_id: $id, to_user_id: u.user_id, status: 'SENDING'}) " +
-    "RETURN u, fr IS NOT NULL AS hasSending",
-    new { id });
-
-
-                    while (await result.FetchAsync())
+                " MATCH (u:USER) " +
+                " WHERE NOT(u) -[:IS_FRIEND_WITH]-(: USER { user_id: $id }) " +
+                " AND u.user_id <> $id " +
+                " AND NOT(u)-[:SENT_REQUEST]->(:FRIENDREQUEST { from_user_id: u.user_id, to_user_id: $id }) " +
+                " OPTIONAL MATCH(fr:FRIENDREQUEST { from_user_id: $id, to_user_id: u.user_id, status: 'SENDING'})" +
+                " RETURN u, fr IS NOT NULL AS hasSending",
+ new { id });
+                    var records = await result.ToListAsync();
+                    foreach (var record in records)
                     {
-                        var userNode = result.Current["u"].As<INode>();
-                        var hasPendingRequest = result.Current["hasSending"].As<bool>();
+                        var userNode = record["u"].As<INode>();
+                        var hasPendingRequest = record["hasSending"].As<bool>();
+
                         var user = mapping.MapUser(userNode);
                         user.HasSendingRequest = hasPendingRequest;
 
                         users.Add(user);
                     }
+
                 }
                 catch (Exception ex)
                 {
-
+                    throw;
                 }
 
                 return users;
@@ -806,7 +807,7 @@ namespace DoAn_NOSQL
             }
         }
 
-        public async Task<bool> CreateUser(string username, string password, string email,string name,string phone )
+        public async Task<bool> CreateUser(string username, string password, string email, string name, string phone)
         {
             using (var session = _driver.AsyncSession())
             {
@@ -816,22 +817,20 @@ namespace DoAn_NOSQL
                     var existingUserResult = await session.RunAsync(
                         "MATCH (u:USER {username: $username}) RETURN COUNT(u) AS count",
                         new { username });
-
+                    int userId;
+                    Random random = new Random();
+                    userId = random.Next(1, 1000000); // Tạo user_id ngẫu nhiên
+                    string image = "Nike-application/6-anh-dai-dien-trang-inkythuatso-03-15-26-36";
                     if (await existingUserResult.FetchAsync() && existingUserResult.Current["count"].As<int>() > 0)
                     {
                         return false; // Tên người dùng đã tồn tại
                     }
 
                     // Tạo người dùng mới
-                    int userId;
-                    Random random = new Random();
-                    userId = random.Next(1, 1000000); // Tạo user_id ngẫu nhiên
-                    string image = "Nike-application/401786250_1727402151094177_8906147692508802950_n";
-                    // Tạo người dùng mới
                     var result = await session.RunAsync(
                         "CREATE (u:USER {user_id: $userId, username: $username, password: $password, mail: $email, created_at: timestamp(), phoneNumber: $phone, name: $name,image: $image}) " +
                         "RETURN u",
-                        new { userId, username, password, email, phone, name,image });
+                          new { userId, username, password, email, phone, name,image });
                     return await result.FetchAsync();
                 }
                 catch (Exception ex)
@@ -841,9 +840,6 @@ namespace DoAn_NOSQL
                 }
             }
         }
-
-
-
     }
 
 }

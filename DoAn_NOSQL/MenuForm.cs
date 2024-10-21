@@ -97,8 +97,16 @@ namespace DoAn_NOSQL
             PersonalForm personal = new PersonalForm();
             personal.userActive = userActive;
             personal.LoadImgFromUrl(userActive.image);
+            personal.SomeEvent += Personal_SomeEvent;
             util.OpenChildForm(personal, panelBody);
         }
+
+        private  async void Personal_SomeEvent(object sender, EventArgs e)
+        {
+            ConnectNeo4j connectNeo4J = new ConnectNeo4j();
+            userActive =  await connectNeo4J.GetUsers(userActive.user_id);
+        }
+
         private async void btnSaoLuu_Click(object sender, EventArgs e)
         {
             using (var dialog = new SaveFileDialog())
@@ -156,5 +164,23 @@ namespace DoAn_NOSQL
                 }
             }
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // Hide the current form
+            using (var loginForm = new Form_DangNhap())
+            {
+                var result = loginForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.Show(); 
+                }
+                else
+                {
+                    this.Close(); 
+                }
+            }
+        }
+
     }
 }

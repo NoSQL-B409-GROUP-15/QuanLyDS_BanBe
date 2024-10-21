@@ -22,6 +22,7 @@ namespace DoAn_NOSQL
         public EditForm()
         {
             InitializeComponent();
+            _SomeEvent = 0;
         }
         public event EventHandler SomeEvent;
         private void textBox1_TextChanged(object sender, EventArgs e)

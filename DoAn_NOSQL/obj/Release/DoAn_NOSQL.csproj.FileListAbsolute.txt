@@ -1,0 +1,16 @@
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.csproj.AssemblyReference.cache
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.ChangePass.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.EditForm.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.PersonalForm.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.RegisterForm.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.u_comment.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.u_Post.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.Form_DangNhap.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.Form_DsBanBe.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.MenuForm.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.PostForm.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.Properties.Resources.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.Util.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.ViewProfileUserForm.resources
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.csproj.GenerateResource.cache
+C:\TaiLieu\NOSQL\DoAn_NOSQL\DoAn_NOSQL\obj\Release\DoAn_NOSQL.csproj.CoreCompileInputs.cache

@@ -19,7 +19,41 @@ namespace DoAn_NOSQL
         public u_comment()
         {
             InitializeComponent();
+            this.MouseDown += U_comment_MouseDown;
+            this.MouseLeave += U_comment_MouseLeave;
+            contextMenuStrip1.MouseEnter += ContextMenuStrip1_MouseEnter;
         }
+
+        private void ContextMenuStrip1_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Aquamarine;
+        }
+
+        private void U_comment_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Empty ;
+        }
+
+        private void U_comment_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                try
+                {
+                    this.BackColor = Color.Aquamarine;
+                    Point mousePosition = this.PointToClient(MousePosition);
+                    contextMenuStrip1.Show(this, mousePosition);
+                }
+                catch (Exception ex)
+                {
+                    // Handle specific exceptions as needed
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                    return;
+                }
+            }
+
+        }
+
         public void PaintData(Comment comment)
         {
             Comment = comment;
@@ -67,6 +101,13 @@ namespace DoAn_NOSQL
                 }
             }
             
+        }
+        public User commenter { get; set; }
+        public event EventHandler EventXemInfo;
+        private void xemTrangCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            commenter = Comment.commenter;
+            EventXemInfo.Invoke(this, EventArgs.Empty);
         }
     }
 }

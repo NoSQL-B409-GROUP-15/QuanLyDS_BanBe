@@ -99,12 +99,24 @@ namespace DoAn_NOSQL
                 };
                 u.EventXoaBinhLuan += U_EventXoaBinhLuan;
                 u.PaintData(item);
+                u.EventXemInfo += U_EventXemInfo;
                 this.panel_binhluan.Controls.Add(u);
             }
         }
-        public void PaintDataViewInfor(Post post, User user)
+
+        private void U_EventXemInfo(object sender, EventArgs e)
         {
-            userActive = user;
+            u_comment u = (u_comment)sender;
+            ViewProfileUserForm ff = new ViewProfileUserForm();
+            ff.PaintData(u.commenter.user_id, userActive);
+            ff.setVisibleBtnBack();
+            
+            ff.ShowDialog();
+        }
+
+        public void PaintDataViewInfor(Post post, User user,User UserActive)
+        {
+            userActive = UserActive;
             Post = post;
             if (post.isLike)
             {
@@ -129,7 +141,7 @@ namespace DoAn_NOSQL
                 {
                     Width = this.panel_binhluan.Width - 10
                 };
-                if (item.commenter.user_id == user.user_id)
+                if (item.commenter.user_id == UserActive.user_id)
                 {
                     u.EventXoaBinhLuan += U_EventXoaBinhLuan;
                     u.PaintData(item);
@@ -139,6 +151,7 @@ namespace DoAn_NOSQL
                 {
                     u.PaintDataViewInfo(item);
                 }
+                u.EventXemInfo += U_EventXemInfo;
                 this.panel_binhluan.Controls.Add(u);
 
 

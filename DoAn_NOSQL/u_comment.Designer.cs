@@ -29,6 +29,7 @@ namespace DoAn_NOSQL
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoaCmt = new System.Windows.Forms.Button();
             this.lblNguoiCmt = new System.Windows.Forms.Label();
@@ -36,9 +37,14 @@ namespace DoAn_NOSQL
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblThoiGianComment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pcBox = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xemTrangCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,7 +69,7 @@ namespace DoAn_NOSQL
             // lblNguoiCmt
             // 
             this.lblNguoiCmt.AutoSize = true;
-            this.lblNguoiCmt.Location = new System.Drawing.Point(28, 10);
+            this.lblNguoiCmt.Location = new System.Drawing.Point(3, 0);
             this.lblNguoiCmt.Name = "lblNguoiCmt";
             this.lblNguoiCmt.Size = new System.Drawing.Size(51, 20);
             this.lblNguoiCmt.TabIndex = 0;
@@ -96,12 +102,43 @@ namespace DoAn_NOSQL
             // 
             // pcBox
             // 
-            this.pcBox.Location = new System.Drawing.Point(209, 3);
+            this.pcBox.Location = new System.Drawing.Point(60, 3);
             this.pcBox.Name = "pcBox";
             this.pcBox.Size = new System.Drawing.Size(53, 34);
             this.pcBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcBox.TabIndex = 28;
             this.pcBox.TabStop = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.lblNguoiCmt, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pcBox, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(26, 6);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 43);
+            this.tableLayoutPanel1.TabIndex = 29;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xemTrangCáNhânToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 69);
+            // 
+            // xemTrangCáNhânToolStripMenuItem
+            // 
+            this.xemTrangCáNhânToolStripMenuItem.Name = "xemTrangCáNhânToolStripMenuItem";
+            this.xemTrangCáNhânToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.xemTrangCáNhânToolStripMenuItem.Text = "Xem trang cá nhân";
+            this.xemTrangCáNhânToolStripMenuItem.Click += new System.EventHandler(this.xemTrangCáNhânToolStripMenuItem_Click);
             // 
             // u_comment
             // 
@@ -109,11 +146,10 @@ namespace DoAn_NOSQL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.pcBox);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblThoiGianComment);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblNguoiCmt);
             this.Name = "u_comment";
             this.Size = new System.Drawing.Size(924, 108);
             this.Load += new System.EventHandler(this.u_comment_Load);
@@ -121,6 +157,9 @@ namespace DoAn_NOSQL
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +173,8 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.Panel panel1;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblThoiGianComment;
         private System.Windows.Forms.PictureBox pcBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem xemTrangCáNhânToolStripMenuItem;
     }
 }
