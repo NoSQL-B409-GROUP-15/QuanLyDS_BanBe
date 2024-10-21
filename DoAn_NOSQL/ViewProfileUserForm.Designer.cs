@@ -30,19 +30,19 @@ namespace DoAn_NOSQL
         private void InitializeComponent()
         {
             this.lblName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lblSoLuongBanChung = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnIsBanBe = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.listPost = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBack = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pcBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnTuChoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSoLuongBanChung = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox)).BeginInit();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -52,14 +52,6 @@ namespace DoAn_NOSQL
             this.lblName.Size = new System.Drawing.Size(129, 29);
             this.lblName.TabIndex = 1;
             this.lblName.Values.Text = "kryptonLabel1";
-            // 
-            // lblSoLuongBanChung
-            // 
-            this.lblSoLuongBanChung.Location = new System.Drawing.Point(363, 121);
-            this.lblSoLuongBanChung.Name = "lblSoLuongBanChung";
-            this.lblSoLuongBanChung.Size = new System.Drawing.Size(125, 29);
-            this.lblSoLuongBanChung.TabIndex = 2;
-            this.lblSoLuongBanChung.Values.Text = "Số bạn chung";
             // 
             // btnIsBanBe
             // 
@@ -85,7 +77,7 @@ namespace DoAn_NOSQL
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(99, 47);
             this.btnBack.TabIndex = 5;
-            this.btnBack.Values.Text = "Back ha";
+            this.btnBack.Values.Text = "<-";
             // 
             // pcBox
             // 
@@ -109,6 +101,21 @@ namespace DoAn_NOSQL
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1139, 153);
             this.panel1.TabIndex = 6;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.btnIsBanBe, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnTuChoi, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(710, 18);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(328, 100);
+            this.tableLayoutPanel2.TabIndex = 7;
             // 
             // btnTuChoi
             // 
@@ -135,20 +142,13 @@ namespace DoAn_NOSQL
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // tableLayoutPanel2
+            // lblSoLuongBanChung
             // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.btnIsBanBe, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnTuChoi, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(710, 18);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(328, 100);
-            this.tableLayoutPanel2.TabIndex = 7;
+            this.lblSoLuongBanChung.Location = new System.Drawing.Point(363, 121);
+            this.lblSoLuongBanChung.Name = "lblSoLuongBanChung";
+            this.lblSoLuongBanChung.Size = new System.Drawing.Size(125, 29);
+            this.lblSoLuongBanChung.TabIndex = 2;
+            this.lblSoLuongBanChung.Values.Text = "Số bạn chung";
             // 
             // ViewProfileUserForm
             // 
@@ -162,9 +162,9 @@ namespace DoAn_NOSQL
             ((System.ComponentModel.ISupportInitialize)(this.pcBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -173,7 +173,6 @@ namespace DoAn_NOSQL
 
         private System.Windows.Forms.PictureBox pcBox;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblName;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSoLuongBanChung;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnIsBanBe;
         private System.Windows.Forms.FlowLayoutPanel listPost;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnBack;
@@ -181,5 +180,6 @@ namespace DoAn_NOSQL
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTuChoi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSoLuongBanChung;
     }
 }

@@ -137,7 +137,7 @@ namespace DoAn_NOSQL
             lblName.Text = InfoUser.name;
             if (listUsers.Count > 0)
             {
-                lblSoLuongBanChung.Text = listUsers.Count.ToString();
+                lblSoLuongBanChung.Text = listUsers.Count.ToString()+" Bạn chung";
             }
             else
             {
